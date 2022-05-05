@@ -1,0 +1,10 @@
+{% block header %}
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'catalogue:shop' %}">Shop</a></li>
+        <li><a href="{% url 'account:login' %}">Login</a></li>
+        <li><a href="{% url 'account:signUp' %}">Sign Up</a></li>
+    </ul>
+</nav>
+{% endblock %}
