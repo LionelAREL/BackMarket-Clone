@@ -4,7 +4,11 @@
     <div>vetements</div>
     <div>
         {% for product in products %}
-            {% include 'catalogue/product.html' with product=product only %}
+            {% include 'catalogue/product.html'%}
+
+            {% if request.get_full_path == '/shop/' %}
+                <a href = "{% url 'catalogue:productDetail' pk=product.id %}">voir l'article</a>
+            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

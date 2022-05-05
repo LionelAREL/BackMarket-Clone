@@ -1,40 +1,35 @@
+from django.contrib.auth import authenticate, login,logout
 from django.core.exceptions import ValidationError
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect
-from django import forms
-from .models import User
-from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from django.urls import reverse
-
-class UserFormLogin(AuthenticationForm):
-    fields = ['username','password']
-
-class UserFormSignUp(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = User
-        fields = UserCreationForm.Meta.fields
+from .forms import *
 
 
-def logout(request):
+def logOut(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
 
 def signUp(request):
+    userForm = UserFormSignUp()
     if request.method == 'POST' :
         userForm = UserFormSignUp(data = request.POST)
         if userForm.is_valid():
-            userForm.save()
-            return HttpResponseRedirect('/')
-    else:
-        userForm = UserFormSignUp()
+            login(request,userForm.save())
+            return redirect('home')
+        else:
+            print("erreur sign up")
     return render(request, 'pages/sign-up.html',{'userForm': userForm}) 
 
-def login(request):
+def loginView(request):
+    userForm = UserFormLogin()
     if request.method == 'POST' :
         userForm = UserFormLogin(data = request.POST)
         if userForm.is_valid():
-            return HttpResponseRedirect('/')
-    else:
-        userForm = UserFormLogin()
+            print("valid")
+            login(request, userForm.user_cache)
+            return redirect('/')
+        else:
+            print("erreur login")
     return render(request, 'pages/login.html',{'userForm': userForm}) 
 

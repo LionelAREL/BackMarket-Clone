@@ -1,0 +1,7 @@
+<div>
+    {{cart.username}}
+    {% for order in orders %}
+        {% include 'cart/order.html' %}
+        <a href = "{% url 'catalogue:deleteToCart' pk=cart.id orderId=order.id %}">delete</a>
+    {% endfor %}
+</div>

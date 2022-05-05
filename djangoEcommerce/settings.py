@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'catalogue',
     'djangoEcommerce',
     'account',
+    'cart',
 ]
 
 MIDDLEWARE = [

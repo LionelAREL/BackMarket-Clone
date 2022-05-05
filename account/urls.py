@@ -8,8 +8,9 @@ from catalogue.views import *
 app_name = 'account'
 
 urlpatterns = [
-    path('login', views.login,name = 'login'),
+    path('login', views.loginView,name = 'login'),
     path('sign-up', views.signUp,name = 'signUp'),
+    path('logOut', views.logOut,name = 'logOut'),
 ]
     
     

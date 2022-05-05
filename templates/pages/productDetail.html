@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'catalogue/product.html' %}
+    <a href="{% url 'catalogue:addToCart' pk=product.id %}"> add to cart </a>
+{% endblock %}
+
