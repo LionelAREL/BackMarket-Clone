@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect,get_object_or_404
 from cart.models import Order, Cart, OrderItem
 from . import models
@@ -22,7 +23,8 @@ def addToCart(request,pk):
     if not orderedItem:
         orderItem.quantity+=1
     orderItem.save()
-    return redirect('catalogue:productDetail',pk = pk)
+    print(request.GET.get('next'))
+    return HttpResponseRedirect(request.GET.get('next'))
 
 def deleteToCart(request,pk,orderItemId):
     get_object_or_404(OrderItem,id=orderItemId).delete()

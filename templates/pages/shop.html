@@ -8,6 +8,7 @@
 
             {% if request.get_full_path == '/shop/' %}
                 <a href = "{% url 'catalogue:productDetail' pk=product.id %}">voir l'article</a>
+                <a href="{% url 'catalogue:addToCart' pk=product.id %}?next={% url 'catalogue:shop' %}"> add to cart </a>
             {% endif %}
         {% endfor %}
     </div>
