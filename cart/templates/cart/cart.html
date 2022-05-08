@@ -1,7 +1,16 @@
 <div>
     {{cart.username}}
-    {% for order in orders %}
-        {% include 'cart/order.html' %}
-        <a href = "{% url 'catalogue:deleteToCart' pk=cart.id orderId=order.id %}">delete</a>
-    {% endfor %}
+    <form method="POST">
+      {% csrf_token %}
+      {{ ordersForm.management_form }}
+        {% for orderForm in ordersForm %}
+            {% if orderForm.instance %}
+                {% include 'cart/orderItem.html' with orderItem=orderForm.instance %}
+                {{orderForm}}
+                <a href="{% url 'catalogue:buyOrder' pk=cart.id orderItemId=orderForm.instance.id %}">buy</a>
+                <a href="{% url 'catalogue:deleteToCart' pk=cart.id orderItemId=orderForm.instance.id %}">delete</a>
+            {% endif %}
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
 </div>

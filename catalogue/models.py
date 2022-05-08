@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Product(models.Model):
     stock = models.IntegerField(default=1)
     img = models.ImageField(blank = True,null = True, upload_to='img')

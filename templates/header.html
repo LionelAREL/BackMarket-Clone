@@ -6,7 +6,10 @@
         <li><a href="{% url 'account:login' %}">Login</a></li>
         <li><a href="{% url 'account:signUp' %}">Sign Up</a></li>
         <li><a href="{% url 'cart:cart' %}">Cart</a></li>
-        <li><a href="{% url 'account:logOut' %}">LogOut</a></li>
+        <li><a href="{% url 'account:account' %}">Account</a></li>
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'account:logOut' %}">LogOut</a></li>
+        {% endif %}
     </ul>
 </nav>
 {% endblock %}
