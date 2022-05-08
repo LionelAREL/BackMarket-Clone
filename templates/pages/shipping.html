@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    shipping
+    {% for adress in adresss %}
+        <p>
+            {{adress}}
+            <a href="{% url 'cart:selectAdress' adressId=adress.id %}">select</a>
+        </p>
+    {% endfor %}
+<form action="{% url 'cart:shipping' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Submit">
+</form>
+
+<a href="{% url 'cart:recap' %}">recapitulatif</a>
+{% endblock %}

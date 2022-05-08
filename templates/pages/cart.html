@@ -2,6 +2,6 @@
 
 {% block content %}
     {% include 'cart/cart.html' %}
-    <a href = "">buy All</a>
+    <a href = "{% url 'cart:shipping'  %}">buy All</a>
 {% endblock %}
 

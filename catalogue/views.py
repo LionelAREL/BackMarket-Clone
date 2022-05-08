@@ -15,22 +15,30 @@ class ProductView(generic.DetailView):
     context_object_name = "product"
     model = Product
 
-def addToCart(request,pk):
-    product = get_object_or_404(Product,id=pk)
+def addToCart(request,productId):
     cart = Cart.objects.get(user = request.user)
     order,ordered = Order.objects.get_or_create(cart = cart,ordered=False)
-    orderItem,orderedItem = OrderItem.objects.get_or_create(order=order)
+    product = Product.objects.get(id=productId)
+    orderItem,orderedItem = OrderItem.objects.get_or_create(order=order,product=product)
     if not orderedItem:
         orderItem.quantity+=1
     orderItem.save()
     print(request.GET.get('next'))
     return HttpResponseRedirect(request.GET.get('next'))
 
-def deleteToCart(request,pk,orderItemId):
+def remove(request,orderItemId):
+    orderItem,orderedItem = OrderItem.objects.get_or_create(id = orderItemId)
+    if not orderedItem:
+        orderItem.quantity-=1
+    orderItem.save()
+    print(request.GET.get('next'))
+    return HttpResponseRedirect(request.GET.get('next'))
+
+def deleteToCart(request,orderItemId):
     get_object_or_404(OrderItem,id=orderItemId).delete()
     return redirect('cart:cart')
 
-def buyOrder(request,pk,orderItemId):
+def buyOrder(request,orderItemId):
     orderItem = get_object_or_404(OrderItem,id=orderItemId)
     if orderItem.is_valid():
         orderItem.ordered = True
@@ -40,8 +48,8 @@ def buyOrder(request,pk,orderItemId):
     orderItem.save()
     return redirect('cart:cart')
 
-def buyAll(request,pk):
-    cart = get_object_or_404(Cart,id=pk)
+def buyAll(request):
+    cart = get_object_or_404(Cart,user = request.user)
     orders = Order.objects.filter(cart=cart)
     can_buy = True
     for orderItem in orders.orderItem_set:
@@ -49,8 +57,5 @@ def buyAll(request,pk):
             can_buy = False
     if can_buy:
         for orderItem in orders.orderItem_set:
-            orderItem.ordered = True
-            product = Product.objects.get(id=orderItem.product.id)
-            product.stock -= orderItem.quantity
-            product.save()
+            return redirect('cart:shipping')
     return redirect('cart:cart')

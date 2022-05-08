@@ -1,8 +1,5 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.shortcuts import get_object_or_404
-from django.db.models import F
-
 from catalogue.models import Product
 
 class Cart(models.Model):
@@ -10,18 +7,37 @@ class Cart(models.Model):
     def __str__(self):
         return self.user.username
 
+    @property
+    def total(self):
+        orders = self.order_set
+        if orders:
+            order = orders.all()[0]
+            return order.totalOrder
+        return 0
+
+class Adress(models.Model):
+    city = models.CharField(max_length=100)
+    postCode = models.IntegerField(blank=True)
+    adress = models.CharField(max_length=500)
+    adressComplement = models.CharField(max_length=500)
+    user = models.ForeignKey(get_user_model(),on_delete=models.CASCADE,blank=True,null=True)
+
+    def __str__(self):
+        return f"{self.city} ({self.postCode})"
+
+
 class Order(models.Model):
     ordered = models.BooleanField(default=False)
     date = models.DateField(blank=True,null=True)
     cart= models.ForeignKey(Cart,on_delete=models.CASCADE)
+    adress = models.ForeignKey(Adress,on_delete=models.CASCADE,blank=True,null=True)
     def __str__(self):
         return f"{self.cart.user.username}({self.ordered})"
 
     @property
     def totalOrder(self):
-        total = sum([x.quantity * x.product.price for x in self.orderitem_set])
-
-
+        total = sum([x.quantity * x.product.price for x in self.orderitem_set.all()])
+        return total
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
@@ -45,6 +61,7 @@ class OrderItem(models.Model):
     @property
     def totalOrderItem(self):
         return self.quantity*self.product.price
+
 
 
 
