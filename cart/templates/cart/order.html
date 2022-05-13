@@ -1,0 +1,9 @@
+<div>
+    {% for orderItem in order.orderItems.all %}
+        {% include 'cart/orderItem.html' with orderItem=orderItem %}
+        <a href="{% url 'catalogue:addToCart' productId=orderItem.product.id %}?next={% url 'cart:cart' %}">add 1</a>
+        <a href="{% url 'catalogue:remove' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">remove 1</a>
+        <a href="{% url 'catalogue:deleteToCart' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">delete</a>
+    {% endfor %}
+    <p>prix total : {{order.total_order_float}}</p>
+</div>

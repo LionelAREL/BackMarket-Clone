@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from catalogue import models
+from django.views.generic import TemplateView
 
-def home(request):
-    return render(request,'pages/home.html')
+
+class Home(TemplateView):
+    template_name = 'pages/home.html'

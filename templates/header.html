@@ -5,7 +5,7 @@
         <li><a href="{% url 'catalogue:shop' %}">Shop</a></li>
         <li><a href="{% url 'account:login' %}">Login</a></li>
         <li><a href="{% url 'account:signUp' %}">Sign Up</a></li>
-        <li><a href="{% url 'cart:cart' %}">Cart</a></li>
+        <li><a href="{% url 'cart:cart' %}">Cart {{request.user.cart.size}}</a></li>
         <li><a href="{% url 'account:account' %}">Account</a></li>
         {% if request.user.is_authenticated %}
             <li><a href="{% url 'account:logOut' %}">LogOut</a></li>

@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% include 'cart/cart.html' %}
+    {% include 'cart/order.html' %}
     <a href = "{% url 'cart:shipping'  %}">buy All</a>
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
 {% endblock %}
 

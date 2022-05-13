@@ -2,6 +2,6 @@
 
 {% block content %}
     {% include 'catalogue/product.html' %}
-    <a href="{% url 'catalogue:addToCart' pk=cart.id productId=product.id %}?next={% url 'cart:cart' %}">add 1</a>
+    <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:productDetail' pk=product.id %}">add 1</a>
 {% endblock %}
 

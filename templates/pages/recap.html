@@ -1,8 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    recap
-    {% for orderItem in orderItems %}
-        {{orderItem.product.name}} {{orderItem.quantity}} {{orderItem.totalOrderItem}}€
-    {% endfor %}
-{% endblock %}

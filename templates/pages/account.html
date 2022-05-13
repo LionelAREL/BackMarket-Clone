@@ -2,4 +2,13 @@
 
 {% block content %}
     {{user}}
+
+    <p>precedents commandes : </p>
+    {% for order in previousOrder %}
+        ---
+        {{order}}
+        {% for orderItem in order.orderItems %}
+            {{orderItem}}
+        {% endfor %}
+    {% endfor %}
 {% endblock %}
