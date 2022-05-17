@@ -5,8 +5,6 @@ class Categorie(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
 
-    def product(self):
-        return self.product_set.all()
 
 
 class Product(models.Model):
@@ -23,5 +21,4 @@ class Product(models.Model):
     @property
     def price_float(self):
         return "{:.2f}".format(self.price / 100)
-
 

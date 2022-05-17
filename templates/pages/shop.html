@@ -4,6 +4,10 @@
     {% for message in messages %}
         {{message}}
     {% endfor %}
+        <form method="get">
+            {{ form.as_p }}
+            <input type="submit" value="chercher">
+        </form>
     <div>
         {% for product in products %}
             {% include 'catalogue/product.html'%}

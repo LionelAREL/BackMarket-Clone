@@ -1,17 +1,37 @@
 from django.shortcuts import redirect,get_object_or_404
 from django.urls import reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView, RedirectView, DetailView
+from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import ListView, RedirectView, DetailView, FormView
+from django.views.generic.base import ContextMixin
+
 from cart.utils import get_or_set_order
 from cart.models import OrderItem
-from .models import Product
+from .forms import SearchForm
+from .models import Product, Categorie
 from django.contrib import messages
 
-
-class Shop(ListView):
-    model = Product
+@method_decorator(csrf_exempt, name='dispatch')
+class Shop(FormView):
+    form_class = SearchForm
     context_object_name = 'products'
     template_name = 'pages/shop.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Shop, self).get_context_data(**kwargs)
+        products = Product.objects.all()
+        search_text = self.request.GET.get('search_text')
+        categorie = self.request.GET.get('categorie')
+        if search_text and search_text != '':
+            print("txt")
+            products = products.filter(name=search_text)
+        if categorie and categorie != 'tous':
+            print(categorie)
+            products = products.filter(categorie__name=categorie)
+        context['products'] = products
+        return context
+
+
 
 class ProductView(DetailView):
     template_name = "pages/productDetail.html"
