@@ -8,6 +8,7 @@
             {{ form.as_p }}
             <input type="submit" value="chercher">
         </form>
+        <a href="{% url 'catalogue:shop' %}">reset</a>
     <div>
         {% for product in products %}
             {% include 'catalogue/product.html'%}

@@ -17,16 +17,21 @@ class Shop(FormView):
     context_object_name = 'products'
     template_name = 'pages/shop.html'
 
+    def get_initial(self):
+        initial = super(Shop,self).get_initial()
+        initial['search_text'] = self.request.GET.get('search_text')
+        if self.request.GET.get('categorie') is not None:
+            initial['categorie'] = self.request.GET.get('categorie')
+        return initial
+
     def get_context_data(self, **kwargs):
         context = super(Shop, self).get_context_data(**kwargs)
         products = Product.objects.all()
         search_text = self.request.GET.get('search_text')
         categorie = self.request.GET.get('categorie')
         if search_text and search_text != '':
-            print("txt")
             products = products.filter(name=search_text)
         if categorie and categorie != 'tous':
-            print(categorie)
             products = products.filter(categorie__name=categorie)
         context['products'] = products
         return context
