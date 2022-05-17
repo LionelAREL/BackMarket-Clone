@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>vetements</div>
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
     <div>
         {% for product in products %}
             {% include 'catalogue/product.html'%}

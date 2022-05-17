@@ -24,3 +24,4 @@ class Product(models.Model):
     def price_float(self):
         return "{:.2f}".format(self.price / 100)
 
+

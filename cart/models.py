@@ -19,10 +19,13 @@ class Order(models.Model):
     ordered = models.BooleanField(default=False)
     date = models.DateField(blank=True,null=True)
     user= models.ForeignKey(User,on_delete=models.SET_NULL,blank=True,null=True,related_name='order')
-    adress = models.ForeignKey(Adress,on_delete=models.CASCADE,blank=True,null=True,related_name='adresses')
+    adress = models.ForeignKey(Adress,on_delete=models.CASCADE,blank=True,null=True)
     payment_id = models.CharField(max_length=100,blank=True,null=True)
     def __str__(self):
-        return f"{self.user.username}({self.ordered})"
+        if self.user:
+            return f"{self.user.username}({self.ordered})"
+        else:
+            return f"anonymous_user({self.ordered})"
 
     @property
     def total_order(self):
@@ -33,9 +36,15 @@ class Order(models.Model):
     def total_order_float(self):
         return "{:.2f}".format(self.total_order / 100)
 
+    def is_valid(self):
+        for orderItem in self.orderItems.all():
+            if not orderItem.is_valid():
+                return False
+        return True
+
 
 class OrderItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+    product = models.ForeignKey(Product, on_delete=models.DO_NOTHING,related_name="orderItems",related_query_name="orderItems")
     quantity = models.IntegerField(default=1)
     order = models.ForeignKey(Order, on_delete=models.CASCADE,related_name='orderItems')
 

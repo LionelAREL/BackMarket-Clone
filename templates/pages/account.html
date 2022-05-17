@@ -7,7 +7,7 @@
     {% for order in previousOrder %}
         ---
         {{order}}
-        {% for orderItem in order.orderItems %}
+        {% for orderItem in order.orderItems.all %}
             {{orderItem}}
         {% endfor %}
     {% endfor %}

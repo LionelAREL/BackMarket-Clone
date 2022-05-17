@@ -10,6 +10,8 @@
         {% if request.user.is_authenticated %}
             <li><a href="{% url 'account:logOut' %}">LogOut</a></li>
         {% endif %}
+        panier : {{cart}}
+
     </ul>
 </nav>
 {% endblock %}

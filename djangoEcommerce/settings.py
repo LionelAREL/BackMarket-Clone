@@ -34,13 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalogue',
     'djangoEcommerce',
     'account',
     'cart',
+    'session',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+SESSION_ENGINE = 'session.backends.db'
 
 ROOT_URLCONF = 'djangoEcommerce.urls'
 
@@ -66,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.context_processors.get_order',
             ],
         },
     },
@@ -131,4 +134,5 @@ MEDIA_ROOT = BASE_DIR / "media/"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'account.User'
 
+LOGIN_URL = '/account/login'
 
