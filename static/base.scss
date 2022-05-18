@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;1,900&display=swap');
+
+.main{
+  background-color: #3F3A3A;
+  width: 1500px;
+  margin: 0 auto;
+}
+.min{
+  min-height: 100vh;
+}
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+section{
+  min-height: 1000px;
+}

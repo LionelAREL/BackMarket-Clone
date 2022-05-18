@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'account',
     'cart',
     'session',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,10 @@ AUTH_USER_MODEL = 'account.User'
 
 LOGIN_URL = '/account/login'
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+SASS_PRECISION = 8

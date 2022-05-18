@@ -1,17 +1,15 @@
 {% block header %}
+{% load static %}
 <nav>
+    <div class="logo">e-commerce</div>
     <ul>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'catalogue:shop' %}">Shop</a></li>
-        <li><a href="{% url 'account:login' %}">Login</a></li>
-        <li><a href="{% url 'account:signUp' %}">Sign Up</a></li>
-        <li><a href="{% url 'cart:cart' %}">Cart {{request.user.cart.size}}</a></li>
-        <li><a href="{% url 'account:account' %}">Account</a></li>
-        {% if request.user.is_authenticated %}
-            <li><a href="{% url 'account:logOut' %}">LogOut</a></li>
-        {% endif %}
-        panier : {{cart}}
-
+        <li><a href="{% url 'catalogue:shop' %}">About</a></li>
     </ul>
+    <div class="detail">
+        <a href="{% url 'account:account' %}"><img src="{% static 'assets/account.svg' %}"></a>
+        <a href="{% url 'cart:cart' %}"><img src="{% static 'assets/cart.svg' %}"></a>
+    </div>
 </nav>
 {% endblock %}

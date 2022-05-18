@@ -11,4 +11,7 @@
             {{orderItem}}
         {% endfor %}
     {% endfor %}
+    {% if request.user.is_authenticated %}
+        <li><a href="{% url 'account:logOut' %}">LogOut</a></li>
+    {% endif %}
 {% endblock %}

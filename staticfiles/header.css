@@ -1,0 +1,40 @@
+header {
+  background-color: #3F3A3A; }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; }
+    header nav ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 0; }
+      header nav ul li {
+        margin-top: 10px;
+        list-style: none;
+        padding: 1em 2em; }
+        header nav ul li a {
+          color: white;
+          text-decoration: none;
+          font-family: 'Archivo', sans-serif;
+          font-size: 1.5em; }
+    header nav .logo {
+      padding: 1em 2em;
+      color: white;
+      text-decoration: none;
+      font-family: 'Archivo', sans-serif;
+      font-weight: bold;
+      font-size: 1.5em; }
+    header nav .detail {
+      margin-right: 2em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+      header nav .detail a {
+        padding: 1em 0;
+        display: inline-block; }
+        header nav .detail a img {
+          margin: 0 20px;
+          height: 40px; }
+
+/*# sourceMappingURL=header.css.map */

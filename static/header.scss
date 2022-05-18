@@ -1,0 +1,48 @@
+header{
+  background-color: #3F3A3A;
+  nav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+      ul{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 0;
+      li{
+          margin-top: 10px;
+          list-style: none;
+          padding: 1em 2em;
+        a{
+          color: white;
+          text-decoration: none;
+          font-family: 'Archivo', sans-serif;
+          font-size: 1.5em;
+        }
+      }
+    }
+    .logo{
+      padding: 1em 2em;
+      color: white;
+      text-decoration: none;
+      font-family: 'Archivo', sans-serif;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    .detail {
+      margin-right: 2em;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      a{
+        padding: 1em 0;
+        display: inline-block;
+       img{
+        margin: 0 20px;
+        height: 40px;
+      }
+      }
+    }
+  }
+
+}
