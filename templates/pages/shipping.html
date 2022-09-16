@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/shipping.scss' %}" />
+{% endblock %}
 
 {% block content %}
-    shipping
-    {% for adress in request.user.adresses.all %}
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="https://js.stripe.com/v3/"></script>
+
+<div class="shipping">
+        {% for adress in request.user.adresses.all %}
         <p>
             {{adress}}
-            <a href="{% url 'cart:selectAdress' adressId=adress.id %}">select</a>
+            <a href="{% url 'cart:selectAdress' adressId=adress.id %}">choisir</a>
         </p>
     {% endfor %}
 <p>
-            adresse choisit : {{order.adress}}
-        </p>
+    adresse choisie : {{order.adress}}
+</p>
 <form action="{% url 'cart:shipping' %}" method="post">
     {% csrf_token %}
     {{form}}
-    <input type="submit" value="Submit">
+    <input type="submit" value="ajouter une adresse">
 </form>
-
-<a href="{% url 'cart:payment' %}">recapitulatif</a>
-
+<br>
+<form action="{% url 'cart:payment' %}" method="POST">
+    {% csrf_token %}
+  <button type="submit" id="checkout-button">récapitulatif et paiement</button>
+</form>
+</div>
 
 {% endblock %}

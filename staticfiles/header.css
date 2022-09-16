@@ -1,40 +1,58 @@
 header {
-  background-color: #3F3A3A; }
+  background-color: var(--color-header);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  justify-content: space-between; }
   header nav {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row; }
+    margin: auto 0; }
     header nav ul {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      margin: 0; }
+      justify-content: space-between;
+      padding-inline-start: 0;
+      margin-block: 0; }
       header nav ul li {
-        margin-top: 10px;
-        list-style: none;
-        padding: 1em 2em; }
+        margin: 0 20px;
+        list-style: none; }
         header nav ul li a {
-          color: white;
+          color: var(--color-font-header);
           text-decoration: none;
-          font-family: 'Archivo', sans-serif;
-          font-size: 1.5em; }
-    header nav .logo {
-      padding: 1em 2em;
-      color: white;
-      text-decoration: none;
-      font-family: 'Archivo', sans-serif;
-      font-weight: bold;
-      font-size: 1.5em; }
-    header nav .detail {
-      margin-right: 2em;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between; }
-      header nav .detail a {
-        padding: 1em 0;
-        display: inline-block; }
-        header nav .detail a img {
-          margin: 0 20px;
-          height: 40px; }
+          font-family: var(--font-family-header), sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          font-style: normal;
+          text-transform: uppercase;
+          white-space: nowrap;
+          line-height: 1.5; }
+  header .logo {
+    margin: 10px 0; }
+    header .logo img {
+      height: 50px; }
+  header .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: var(--color-font-header); }
+  header .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-font-header);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out; }
+  header .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left; }
+  header .active {
+    color: var(--color-font-header);
+    text-decoration: underline;
+    text-underline-offset: 3px; }
 
 /*# sourceMappingURL=header.css.map */

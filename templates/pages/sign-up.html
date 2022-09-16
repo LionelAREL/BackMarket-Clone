@@ -1,13 +1,22 @@
-
 {% extends 'base.html' %}
 
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/sign-up.scss' %}" />
+{% endblock %}
+
+
 {% block content %}
-<form action="{% url 'account:signUp' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
-<p>deja inscrit ?</p>
-<a href="{% url 'account:login' %}">connecte toi</a>
+<div class="signup">
+    <form action="{% url 'account:signUp' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<p>deja inscrit ? <a href="{% url 'account:login' %}">connecte toi</a></p>
+
 {% endblock %}
 

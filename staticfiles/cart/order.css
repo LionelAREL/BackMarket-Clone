@@ -1,0 +1,15 @@
+.order {
+  font-family: var(--font-family-header); }
+  .order a {
+    color: var(--color-font-header);
+    margin-left: 50px; }
+  .order #quantity {
+    margin-left: 90px;
+    margin-bottom: 0; }
+
+.orders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+/*# sourceMappingURL=order.css.map */

@@ -1,0 +1,17 @@
+.detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  font-family: var(--font-family-header); }
+  .detail img {
+    width: 800px;
+    height: 800px; }
+  .detail .info {
+    display: inline-block; }
+    .detail .info a {
+      font-size: 20px;
+      color: var(--color-font-header); }
+
+/*# sourceMappingURL=productDetail.css.map */

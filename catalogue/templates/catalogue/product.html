@@ -1,8 +1,25 @@
-<div>
-    <img src="{{product.img.url}}" alt="">
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'catalogue/product.scss' %}" />
+{% endblock %}
+
+<div class="product">
+    <div class="img">
+        <img src="{{product.img.url}}" alt="">
+    </div>
     <h1>{{product.name}}</h1>
-    <p>{{product.price_float}}</p>
-    <p>{{product.description}}</p>
+    <p>{{product.price_float}}€</p>
     <p>Article restant : {{product.stock}}</p>
-    <p>{{product.img.url}}</p>
+    <br>
+    <a class="hover-underline-animation" href = "{% url 'catalogue:productDetail' pk=product.id  %}">voir l'article</a>
+    {% if request.get_full_path != '/cart/' %}
+        {% if request.get_full_path == '/home' %}
+            <a class="hover-underline-animation" href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'home' %}">ajouter au panier</a>
+        {% endif %}
+        {% if request.get_full_path == '/shop/' %}
+            <a class="hover-underline-animation" href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:shop' %}">ajouter au panier</a>
+        {% endif %}
+    {% endif %}
 </div>

@@ -1,15 +1,25 @@
 {% block header %}
 {% load static %}
+{% load active_link_tags %}
+
 <nav>
-    <div class="logo">e-commerce</div>
     <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'catalogue:shop' %}">Shop</a></li>
-        <li><a href="{% url 'catalogue:shop' %}">About</a></li>
+        <li><a class="hover-underline-animation {% active_link 'home' %}" href="{% url 'home' %}">Home</a></li>
+        <li><a class="hover-underline-animation {% active_link 'catalogue:shop' %}" href="{% url 'catalogue:shop' %}">Shop</a></li>
+        <li><a class="hover-underline-animation {% active_link 'catalogue:about' %}" href="{% url 'catalogue:shop' %}">About</a></li>
     </ul>
-    <div class="detail">
-        <a href="{% url 'account:account' %}"><img src="{% static 'assets/account.svg' %}"></a>
-        <a href="{% url 'cart:cart' %}"><img src="{% static 'assets/cart.svg' %}"></a>
-    </div>
+</nav>
+<div class="logo">
+    <a href="{% url 'home' %}"><img src="{% static 'assets/logo.png' %}"></a>
+</div>
+<nav>
+    <ul>
+        <li>
+            <a class="hover-underline-animation {% active_link 'account:account' %}" href="{% url 'account:account' %}">account</a>
+        </li>
+        <li>
+            <a class="hover-underline-animation {% active_link 'cart:cart' %}" href="{% url 'cart:cart' %}">cart({{ cart }})</a>
+        </li>
+    </ul>
 </nav>
 {% endblock %}

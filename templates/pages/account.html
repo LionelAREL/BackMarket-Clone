@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/account.scss' %}" />
+{% endblock %}
 
 {% block content %}
-    {{user}}
+<div class="account">
+        <p>{{user}}</p>
 
-    <p>precedents commandes : </p>
-    {% for order in previousOrder %}
-        ---
-        {{order}}
-        {% for orderItem in order.orderItems.all %}
-            {{orderItem}}
+        <p>précédentes commandes : </p>
+        {% for order in previousOrder %}
+            ---
+            {{order}}
+            {% for orderItem in order.orderItems.all %}
+                {{orderItem}}
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-    {% if request.user.is_authenticated %}
-        <li><a href="{% url 'account:logOut' %}">LogOut</a></li>
-    {% endif %}
+        {% if request.user.is_authenticated %}
+            <li><a href="{% url 'account:logOut' %}">Se déconnecter</a></li>
+        {% endif %}
+</div>
 {% endblock %}

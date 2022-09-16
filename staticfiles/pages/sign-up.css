@@ -1,0 +1,27 @@
+form {
+  margin-top: 80px;
+  font-family: var(--font-family-header);
+  text-align: center;
+  font-size: 20px; }
+  form ul {
+    list-style: none; }
+  form input {
+    border-radius: -100px;
+    height: 20px;
+    background-color: transparent; }
+  form input {
+    border-radius: -100px;
+    background-color: transparent;
+    font-size: 25px;
+    height: auto; }
+
+p {
+  text-align: center;
+  font-family: var(--font-family-header);
+  font-size: 20px; }
+
+a {
+  font-family: var(--font-family-header);
+  color: var(--color-front-header); }
+
+/*# sourceMappingURL=sign-up.css.map */

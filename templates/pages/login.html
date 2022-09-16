@@ -1,13 +1,20 @@
-
 {% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/login.scss' %}" />
+{% endblock %}
 
 {% block content %}
-<form action="{% url 'account:login' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit">
-</form>
-<p>pas encore inscrit ? </p>
-<a href="{% url 'account:signUp' %}">clique ici</a>
+<div class="login">
+    <form action="{% url 'account:login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<p>pas encore inscrit ? <a href="{% url 'account:signUp' %}">clique ici</a></p>
+
 {% endblock %}
 

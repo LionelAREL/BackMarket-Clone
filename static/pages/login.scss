@@ -1,0 +1,31 @@
+form{
+    margin-top: 80px;
+    font-family: var(--font-family-header);
+    text-align: center;
+    font-size: 20px;
+    ul{
+        list-style: none;
+    }
+    input{
+        border-radius: -100px;
+        height: auto;
+        background-color: transparent;
+        font-size: 20px;
+    }
+}
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+p{
+    text-align: center;
+    font-family: var(--font-family-header);
+    font-size: 20px;
+
+}
+
+a{
+    font-family: var(--font-family-header);
+    color: var(--color-front-header);
+}

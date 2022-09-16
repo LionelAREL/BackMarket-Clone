@@ -14,6 +14,7 @@ class Product(models.Model):
     description = models.CharField(max_length = 500)
     price = models.IntegerField(default=0)
     categorie = models.ManyToManyField(Categorie,blank=True)
+    date = models.DateTimeField(auto_created=True,null=True)
 
     def __str__(self):
         return f"{self.name}:{self.price}({self.stock})"

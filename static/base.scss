@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
-.main{
-  background-color: #3F3A3A;
-  width: 1500px;
-  margin: 0 auto;
+:root{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  --font-family-header: 'Nunito Sans';
+  --color-header:white;
+  --color-font-header:black;
 }
-.min{
-  min-height: 100vh;
-}
+
 
 body{
   box-sizing: border-box;
@@ -18,5 +22,5 @@ body{
 }
 
 section{
-  min-height: 1000px;
+  min-height: 100vh ;
 }

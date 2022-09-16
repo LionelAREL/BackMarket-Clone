@@ -30,7 +30,7 @@ class Shop(FormView):
         search_text = self.request.GET.get('search_text')
         categorie = self.request.GET.get('categorie')
         if search_text and search_text != '':
-            products = products.filter(name=search_text)
+            products = Product.objects.filter(name=search_text)
         if categorie and categorie != 'tous':
             products = products.filter(categorie__name=categorie)
         context['products'] = products

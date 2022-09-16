@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cart',
     'session',
     'sass_processor',
+    'active_link',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.get_order',
+                'cart.context_processors.latest',
             ],
         },
     },

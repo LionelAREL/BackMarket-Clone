@@ -1,6 +1,40 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/home.scss' %}" />
+{% endblock %}
+
 
 {% block content %}
-    <div>home</div>
+    <img class="background" src="{% static 'assets/banner.jpg' %}" alt="">
+    <div class="info">
+        <div class="element">
+            <img class="icon" id="icon1" src="{% static 'assets/shipping.webp' %}" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae harum similique illo illum explicabo sunt rem placeat sed earum unde!</p>
+        </div>
+        <div class="element">
+            <img class="icon" id="icon2" src="{% static 'assets/online.webp' %}" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae harum similique illo illum explicabo sunt rem placeat sed earum unde!</p>
+        </div>
+        <div class="element">
+            <img class="icon" id="icon3" src="{% static 'assets/money.webp' %}" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae harum similique illo illum explicabo sunt rem placeat sed earum unde!</p>
+        </div>
+    </div>
+    <div class="latest">
+        Latest Products
+    </div>
+    <div class="products">
+        {% for product in latest %}
+            {% include 'catalogue/product.html' with product=product %}
+            {% if request.get_full_path == '/shop/' %}
+                <a href = "{% url 'catalogue:productDetail' pk=product.id  %}">voir l'article</a>
+                <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:shop' %}"> add to cart </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
 {% endblock %}
 

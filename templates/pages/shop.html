@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/shop.scss' %}" />
+{% endblock %}
 
 {% block content %}
     {% for message in messages %}
@@ -8,15 +14,10 @@
             {{ form }}
             <input type="submit" value="chercher">
         </form>
-        <a href="{% url 'catalogue:shop' %}">reset</a>
-    <div>
+        {% comment %} <a href="{% url 'catalogue:shop' %}">reset</a> {% endcomment %}
+    <div class="products">
         {% for product in products %}
             {% include 'catalogue/product.html'%}
-
-            {% if request.get_full_path == '/shop/' %}
-                <a href = "{% url 'catalogue:productDetail' pk=product.id  %}">voir l'article</a>
-                <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:shop' %}"> add to cart </a>
-            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

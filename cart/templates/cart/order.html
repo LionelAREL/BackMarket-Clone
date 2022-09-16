@@ -1,9 +1,23 @@
-<div>
-    {% for orderItem in order.orderItems.all %}
-        {% include 'cart/orderItem.html' with orderItem=orderItem %}
-        <a href="{% url 'catalogue:addToCart' productId=orderItem.product.id %}?next={% url 'cart:cart' %}">add 1</a>
-        <a href="{% url 'catalogue:remove' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">remove 1</a>
-        <a href="{% url 'catalogue:deleteToCart' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">delete</a>
-    {% endfor %}
-    <p>prix total : {{order.total_order_float}}</p>
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'cart/order.scss' %}" />
+{% endblock %}
+
+<div class="order">
+    <div class="orders">
+        {% for orderItem in order.orderItems.all %}
+        <div>
+            {% include 'catalogue/product.html' with product=orderItem.product %}
+            <div id="quantity">{{ orderItem.quantity }}</div>
+            <a href="{% url 'catalogue:addToCart' productId=orderItem.product.id %}?next={% url 'cart:cart' %}">ajouter un item</a>
+            <br>
+            <a href="{% url 'catalogue:remove' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">enlever un item</a>
+            <br>
+            <a href="{% url 'catalogue:deleteToCart' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">supprimer l'article</a>
+        </div>
+        {% endfor %}
+    </div>
+    <p>prix total : {{order.total_order_float}}€</p>
 </div>

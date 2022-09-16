@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/productDetail.scss' %}" />
+{% endblock %}
 
 {% block content %}
-    {% include 'catalogue/product.html' %}
-    <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:productDetail' pk=product.id %}">add 1</a>
+    <div class="detail">
+        <img src="{{product.img.url}}" alt="">
+        <div class="info">
+            <h1>{{product.name}}</h1>
+            <p>{{product.price_float}}€</p>
+            <p>Article restant : {{product.stock}}</p>
+            <p>description : {{product.description}}</p>
+            <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:productDetail' pk=product.id %}">ajouter un article</a>
+        </div>
+    </div>
 {% endblock %}
 

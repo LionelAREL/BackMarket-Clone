@@ -47,7 +47,7 @@ class Payment(TemplateView):
                             'unit_amount': x.product.price,
                             'product_data': {
                                 'name': x.product.name,
-                                'images': ['https://i.imgur.com/EHyR2nP.png'],
+                                'images': [x.product.img],
                             },
                         },
                         'quantity': x.quantity

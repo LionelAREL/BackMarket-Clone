@@ -1,39 +1,34 @@
 footer{
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      justify-content:center;
-      background-color: #3F3A3A;
-      .logo{
-      top: 50px;
-      left: 80px;
-      position: absolute;
-      color: white;
-      text-decoration: none;
-      font-family: 'Archivo', sans-serif;
-      font-weight: bold;
-      font-size: 1.5em;
-    }
-      .top{
-            font-size: 1.5em;
-            margin: 20px auto;
-            text-align: center;
-            color: white;
-            font-family: 'Archivo', sans-serif;
-            font-weight: bold;
-            .tt{
-                  margin: 20px;
-                  position: relative;
-                  img{
-                  margin-left: 20px;
-                  position: absolute;
-                  top: -10px;
-                  height: 50px;
+      .navigation{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            nav{
+                  ul{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-inline-start: 0;
+                        font-family: var(--font-family-header),sans-serif;
+                        li{
+                              margin: 0 20px;
+                              list-style: none;
+                              font-family: var(--font-family-header),sans-serif;
+                              color: var(--color-font-header);
+                              a{
+                                    text-decoration: none;
+                              }
+      
+                        }
                   }
             }
-            .bot{
-                  font-size: 0.8em;
+      }
+      .reseaux{
+            display: flex;
+            flex-direction: row-reverse;
+            img{
+                  margin: 0 20px;
+                  height: 20px;
             }
       }
-
 }
