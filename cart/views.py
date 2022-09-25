@@ -17,9 +17,8 @@ import stripe
 class Cart(TemplateView):
     template_name = 'pages/cart.html'
 
-
+@method_decorator(login_required(login_url="/account/login"), name='dispatch')
 @method_decorator(order_required, name='dispatch')
-@method_decorator(login_required, name='dispatch')
 class Shipping(FormView):
     form_class = AdressForm
     template_name = 'pages/shipping.html'
@@ -111,7 +110,7 @@ class WebHook(View):
 
 
 
-@method_decorator(login_required, name='dispatch')
+@method_decorator(login_required(login_url="/account/login/"), name='dispatch')
 class SelectAdress(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         order = get_or_set_order(self.request)

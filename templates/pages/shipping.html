@@ -14,7 +14,7 @@
         {% for adress in request.user.adresses.all %}
         <p>
             {{adress}}
-            <a href="{% url 'cart:selectAdress' adressId=adress.id %}">choisir</a>
+            <a href="{% url 'cart:selectAdress' adressId=adress.id %}">choose</a>
         </p>
     {% endfor %}
 <p>
@@ -28,7 +28,7 @@
 <br>
 <form action="{% url 'cart:payment' %}" method="POST">
     {% csrf_token %}
-  <button type="submit" id="checkout-button">récapitulatif et paiement</button>
+  <button type="submit" id="checkout-button">bill and payment</button>
 </form>
 </div>
 

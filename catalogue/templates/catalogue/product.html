@@ -5,21 +5,17 @@
      <link rel="stylesheet" href="{% sass_src 'catalogue/product.scss' %}" />
 {% endblock %}
 
+
 <div class="product">
     <div class="img">
         <img src="{{product.img.url}}" alt="">
     </div>
     <h1>{{product.name}}</h1>
     <p>{{product.price_float}}€</p>
-    <p>Article restant : {{product.stock}}</p>
+    <p>stock : {{product.stock}}</p>
     <br>
-    <a class="hover-underline-animation" href = "{% url 'catalogue:productDetail' pk=product.id  %}">voir l'article</a>
+    <a class="hover-underline-animation" href = "{% url 'catalogue:productDetail' pk=product.id  %}">view product</a>
     {% if request.get_full_path != '/cart/' %}
-        {% if request.get_full_path == '/home' %}
-            <a class="hover-underline-animation" href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'home' %}">ajouter au panier</a>
-        {% endif %}
-        {% if request.get_full_path == '/shop/' %}
-            <a class="hover-underline-animation" href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:shop' %}">ajouter au panier</a>
-        {% endif %}
+        <a style="cursor:pointer;" onclick="fetchUpdateCart(`{% url 'catalogue:addToCart' productId=product.id %}`)">add a article</a>
     {% endif %}
 </div>

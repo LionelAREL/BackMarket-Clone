@@ -30,7 +30,7 @@
         {% for product in latest %}
             {% include 'catalogue/product.html' with product=product %}
             {% if request.get_full_path == '/shop/' %}
-                <a href = "{% url 'catalogue:productDetail' pk=product.id  %}">voir l'article</a>
+                <a href = "{% url 'catalogue:productDetail' pk=product.id  %}">view product</a>
                 <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:shop' %}"> add to cart </a>
             {% endif %}
         {% endfor %}

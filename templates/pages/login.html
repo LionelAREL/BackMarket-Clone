@@ -14,7 +14,10 @@
         <input type="submit" value="Submit">
     </form>
 </div>
-<p>pas encore inscrit ? <a href="{% url 'account:signUp' %}">clique ici</a></p>
-
+<p>sign up here ! <a href="{% url 'account:signUp' %}">click here</a></p>
+<p>forgot password ? <a href="{% url 'account:password_reset' %}">click here</a></p>
+{% for message in messages %}
+    {{message}}
+{% endfor %}
 {% endblock %}
 

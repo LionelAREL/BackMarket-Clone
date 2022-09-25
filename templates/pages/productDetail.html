@@ -14,7 +14,7 @@
             <p>{{product.price_float}}€</p>
             <p>Article restant : {{product.stock}}</p>
             <p>description : {{product.description}}</p>
-            <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:productDetail' pk=product.id %}">ajouter un article</a>
+            <a style="cursor:pointer;" onclick="fetchUpdateCart(`{% url 'catalogue:addToCart' productId=product.id %}`)">add a article</a>
         </div>
     </div>
 {% endblock %}

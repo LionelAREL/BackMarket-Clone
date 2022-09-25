@@ -1,8 +1,8 @@
-from django.shortcuts import redirect,get_object_or_404
+from django.shortcuts import redirect,get_object_or_404,render
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import ListView, RedirectView, DetailView, FormView
+from django.views.generic import ListView, RedirectView, DetailView, FormView, View
 from django.views.generic.base import ContextMixin
 
 from cart.utils import get_or_set_order
@@ -10,6 +10,7 @@ from cart.models import OrderItem
 from .forms import SearchForm
 from .models import Product, Categorie
 from django.contrib import messages
+from django.http import JsonResponse
 
 @method_decorator(csrf_exempt, name='dispatch')
 class Shop(FormView):
@@ -30,21 +31,22 @@ class Shop(FormView):
         search_text = self.request.GET.get('search_text')
         categorie = self.request.GET.get('categorie')
         if search_text and search_text != '':
-            products = Product.objects.filter(name=search_text)
+            products = Product.objects.filter(name__contains=search_text)
         if categorie and categorie != 'tous':
             products = products.filter(categorie__name=categorie)
         context['products'] = products
         return context
 
-
+def update_cart(request):
+    return render(request, 'header.html')
 
 class ProductView(DetailView):
     template_name = "pages/productDetail.html"
     context_object_name = "product"
     model = Product
 
-class AddToCart(RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
+class AddToCart(View):
+    def get(self, *args, **kwargs):
         order= get_or_set_order(self.request)
         product = Product.objects.get(id=kwargs['productId'])
         print(order)
@@ -61,10 +63,10 @@ class AddToCart(RedirectView):
                 orderItem.quantity +=1
                 messages.success(self.request,"vous avez ajouter un article au panier")
         orderItem.save()
-        return self.request.GET.get('next')
+        return JsonResponse({'detail': 'Succeed add to cart item ' + str(kwargs['productId'])})
 
-class Remove(RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
+class Remove(View):
+    def get(self, *args, **kwargs):
         order = get_or_set_order(self.request)
         orderItem = OrderItem.objects.get(id=kwargs['orderItemId'])
         if orderItem.quantity == 1:
@@ -73,13 +75,13 @@ class Remove(RedirectView):
             messages.success(self.request,"vous avez supprimer avec succès l'article")
         orderItem.quantity-=1
         orderItem.save()
-        return self.request.GET.get('next')
+        return JsonResponse({'detail': 'Succeed remove order item ' + str(kwargs['orderItemId'])})
 
-class DeleteToCart(RedirectView):
-    def get_redirect_url(self, *args, **kwargs):
+class DeleteToCart(View):
+    def get(self, *args, **kwargs):
         get_object_or_404(OrderItem,id=kwargs['orderItemId']).delete()
         messages.success(self.request,"article supprimer avec succès")
-        return self.request.GET.get('next')
+        return JsonResponse({'detail': 'Succeed remove to cart item ' + kwargs['orderItemId']})
 
 class BuyOrder(RedirectView):
     def get_redirect_url(self, *args, **kwargs):

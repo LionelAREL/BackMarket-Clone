@@ -4,11 +4,14 @@ from django.shortcuts import render,redirect
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views import View
-from django.views.generic import FormView, TemplateView, RedirectView
+from django.views.generic import FormView, TemplateView, RedirectView, UpdateView
 from cart.models import Order
 from .forms import *
+from django.contrib.auth.forms import PasswordChangeForm
+from account.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-
+@method_decorator(login_required, name='dispatch')
 class LogOut(RedirectView):
     permanent = True
     pattern_name = 'home'
@@ -25,14 +28,28 @@ class SignUpView(FormView):
         login(request=self.request, user=form.save(commit=True))
         return super().form_valid(form)
 
-class LoginView(FormView):
-        form_class = UserFormLogin
-        template_name = 'pages/login.html'
-        success_url = '/'
+@login_required
+def UpdateUserView(request):
+    if request.method == 'POST':
+        form = UserFormUpdate(request.POST, instance=request.user)
+        if form.is_valid():
+            user_form = form.save()
+            return redirect('account:account')
+        else:
+            return render(request, 'pages/updateUser.html',{'form':form})
+    else:
+        form = UserFormUpdate(instance=request.user)
+        return render(request, 'pages/updateUser.html',{'form':form})
 
-        def  form_valid(self, form):
-            login(request=self.request,user=form.user_cache)
-            return super().form_valid(form)
+class LoginView(FormView):
+    form_class = UserFormLogin
+    template_name = 'pages/login.html'
+    success_url = "/"
+
+    def  form_valid(self, form):
+        login(request=self.request,user=form.user_cache)
+        return super().form_valid(form)
+
 
 @method_decorator(login_required, name='dispatch')
 class AccountView(TemplateView):

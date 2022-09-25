@@ -1,0 +1,34 @@
+footer{
+      .navigation{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            nav{
+                  ul{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-inline-start: 0;
+                        font-family: var(--font-family-header),sans-serif;
+                        li{
+                              margin: 0 20px;
+                              list-style: none;
+                              font-family: var(--font-family-header),sans-serif;
+                              color: var(--color-font-header);
+                              a{
+                                    text-decoration: none;
+                              }
+      
+                        }
+                  }
+            }
+      }
+      .reseaux{
+            display: flex;
+            flex-direction: row-reverse;
+            img{
+                  margin: 0 20px;
+                  height: 20px;
+            }
+      }
+}

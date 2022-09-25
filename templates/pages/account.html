@@ -8,9 +8,12 @@
 
 {% block content %}
 <div class="account">
-        <p>{{user}}</p>
+        <p>{{user.username}}</p>
+        <p>{{user.email}}</p>
+        <p><a href="{% url 'account:updateUser' %}">change profil</a></p>
+        <p><a href="{% url 'account:password_change' %}">change password</a></p>
 
-        <p>précédentes commandes : </p>
+        <p>previous order : </p>
         {% for order in previousOrder %}
             ---
             {{order}}
@@ -19,7 +22,7 @@
             {% endfor %}
         {% endfor %}
         {% if request.user.is_authenticated %}
-            <li><a href="{% url 'account:logOut' %}">Se déconnecter</a></li>
+            <li><a href="{% url 'account:logOut' %}">Log out</a></li>
         {% endif %}
 </div>
 {% endblock %}

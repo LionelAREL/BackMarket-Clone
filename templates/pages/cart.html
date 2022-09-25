@@ -10,7 +10,7 @@
 {% block content %}
     <div class="cart">
         {% include 'cart/order.html' %}
-        <a id="commander" href = "{% url 'cart:shipping'  %}">commander</a>
+        <a id="commander" href = "{% url 'cart:shipping'  %}">buy</a>
         {% for message in messages %}
             {{message}}
         {% endfor %}

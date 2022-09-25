@@ -6,15 +6,15 @@
      <link rel="stylesheet" href="{% sass_src 'pages/shop.scss' %}" />
 {% endblock %}
 
+
 {% block content %}
     {% for message in messages %}
         {{message}}
     {% endfor %}
         <form method="get">
             {{ form }}
-            <input type="submit" value="chercher">
+            <input type="submit" value="search">
         </form>
-        {% comment %} <a href="{% url 'catalogue:shop' %}">reset</a> {% endcomment %}
     <div class="products">
         {% for product in products %}
             {% include 'catalogue/product.html'%}

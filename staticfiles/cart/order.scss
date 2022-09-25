@@ -1,0 +1,17 @@
+.order{
+    font-family: var(--font-family-header);
+    a{
+        color: var(--color-font-header);
+        margin-left: 50px;
+    }
+    #quantity{
+        margin-left: 90px;
+        margin-bottom: 0;
+    }
+}
+
+.orders{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

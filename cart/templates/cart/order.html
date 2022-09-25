@@ -11,11 +11,11 @@
         <div>
             {% include 'catalogue/product.html' with product=orderItem.product %}
             <div id="quantity">{{ orderItem.quantity }}</div>
-            <a href="{% url 'catalogue:addToCart' productId=orderItem.product.id %}?next={% url 'cart:cart' %}">ajouter un item</a>
+            <a style="cursor:pointer;" onclick="fetchUpdateAll(`{% url 'catalogue:addToCart' productId=orderItem.product.id %}`)">add a article</a>
             <br>
-            <a href="{% url 'catalogue:remove' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">enlever un item</a>
+            <a style="cursor:pointer;" onclick="fetchUpdateAll(`{% url 'catalogue:remove' orderItemId=orderItem.id %}`)">remove a article</a>
             <br>
-            <a href="{% url 'catalogue:deleteToCart' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}">supprimer l'article</a>
+            <a style="cursor:pointer;" onclick="fetchUpdateAll(`{% url 'catalogue:deleteToCart' orderItemId=orderItem.id %}`)">delete all article</a>
         </div>
         {% endfor %}
     </div>

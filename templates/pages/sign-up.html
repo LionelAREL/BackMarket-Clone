@@ -10,13 +10,13 @@
 
 {% block content %}
 <div class="signup">
-    <form action="{% url 'account:signUp' %}" method="post">
+    <form action="{% url 'account:login' %}" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Submit">
     </form>
 </div>
-<p>deja inscrit ? <a href="{% url 'account:login' %}">connecte toi</a></p>
+<p>deja inscrit ? <a href="{% url 'account:login' %}">log in</a></p>
 
 {% endblock %}
 

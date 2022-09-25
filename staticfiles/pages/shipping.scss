@@ -1,0 +1,21 @@
+.shipping{
+    font-family: var(--font-family-header);
+    a{
+        color: var(--color-font-header);
+    }
+    input[type="submit"]{
+        margin-left: 30px;
+        cursor:pointer;
+        background-color: transparent;
+        border-radius: -50px;
+        font-size: 20px;
+        border-width: 1px;
+        
+    }
+    #checkout-button{
+        cursor:pointer;
+        font-size: 20px;
+        background-color: transparent;
+        font-family: var(--font-family-header);
+    }
+}

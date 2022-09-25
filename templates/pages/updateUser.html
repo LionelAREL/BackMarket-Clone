@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/login.scss' %}" />
+{% endblock %}
+
+{% block content %}
+<p>update profil</p>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
+

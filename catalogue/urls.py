@@ -5,6 +5,7 @@ app_name = "catalogue"
 
 urlpatterns = [
     path('', views.Shop.as_view(),name = 'shop'),
+    path('update-header', views.update_cart,name='updateHeader'),
     path('<int:pk>/',views.ProductView.as_view(), name='productDetail'),
     path('add-to-cart/<slug:productId>/',views.AddToCart.as_view(),name='addToCart'),
     path('delete-to-cart/<slug:orderItemId>/',views.DeleteToCart.as_view(),name='deleteToCart'),
