@@ -1,5 +1,6 @@
 from cart.utils import get_or_set_order, check_cart
 from catalogue.models import Product
+from catalogue.models import Categorie
 
 def get_order(request):
     if request.user.is_authenticated :
@@ -15,7 +16,6 @@ def get_order(request):
     return {'order':order,'cart':cart}
 
 
-def latest(request):
-    latest = Product.objects.order_by('-date')[:6]
-    return {'latest':latest}
 
+def categories(request):
+    return {'categories':Categorie.objects.all()}

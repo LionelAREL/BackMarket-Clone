@@ -1,0 +1,65 @@
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'components/blockProducts.scss' %}" />
+{% endblock %}
+
+<div class="flex row base-line text">
+    <h2 class="mainText">{{mainText}}</h2>
+    <span class="secondaryText">{{secondaryText}}</span>
+</div>
+
+<div class="containerBlock">
+    <div class="top flex row">
+        <div class="block bigBlock">
+            <a class="flex column align-center justify-center" href="">
+                <img src="{{products.0.img.url}}" alt="">
+                <div>
+                    <h2>{{products.0.name}}</h2>
+                    <span>details details details details</span>
+                </div>
+            </a>
+        </div>
+        <div class="block bigBlock">
+            <a class="flex column align-center justify-center" href="">
+                <img src="{{products.1.img.url}}" alt="">
+                <div>
+                    <h2>{{products.1.name}}</h2>
+                    <span>details details details details</span>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+    <div class="bottom flex row space-around">
+        <div class="block littleBlock">
+            <a class="flex column align-center justify-center" href="">
+                <img src="{{products.2.img.url}}" alt="">
+                <div>
+                    <h2>{{products.2.name}}</h2>
+                    <span>details details details details</span>
+                </div>
+            </a>
+        </div>
+        <div class="block littleBlock">
+            <a class="flex column align-center justify-center" href="">
+                <img src="{{products.3.img.url}}" alt="">
+                <div>
+                    <h2>{{products.3.name}}</h2>
+                    <span>details details details details</span>
+                </div>
+            </a>
+        </div>
+        <div class="block littleBlock">
+            <a class="flex column align-center justify-center" href="">
+                <img src="{{products.4.img.url}}" alt="">
+                <div>
+                    <h2>{{products.4.name}}</h2>
+                    <span>details details details details</span>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>

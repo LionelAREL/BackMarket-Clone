@@ -1,0 +1,124 @@
+@font-face{
+    font-family:"BodyFont";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.woff) format("woff"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.ttf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.otf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.eot#iefix) format("embedded-opentype");
+        font-weight:300;font-style:normal;font-display:swap}@font-face{font-family:"BodyFont";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.woff) format("woff"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.ttf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.otf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.eot#iefix) format("embedded-opentype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"BodyFont";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.woff) format("woff"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.ttf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.otf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.eot#iefix) format("embedded-opentype");
+    font-weight:500;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"BodyFontGreek";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Light.woff2) format("woff2");
+    font-weight:300;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"BodyFontGreek";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Regular.woff2) format("woff2");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"BodyFontGreek";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Medium.woff2) format("woff2");
+    font-weight:500;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"TitleFontLatin";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.woff) format("woff"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.ttf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.otf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.eot#iefix) format("embedded-opentype");
+    font-weight:900;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"TitleFontGreek";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.woff) format("woff"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.ttf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.otf) format("truetype"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.eot#iefix) format("embedded-opentype");
+    font-weight:900;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"FontJapanese";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Black.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Black.woff.woff) format("woff");
+    font-weight:900;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"FontJapanese";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Bold.woff2) format("woff2"),
+    url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Bold.woff) format("woff");
+    font-weight:700;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"FontJapanese";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Medium.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Medium.woff) format("woff");
+    font-weight:500;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"FontJapanese";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Regular.woff2) format("woff2"),4
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Regular.woff) format("woff");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"FontJapanese";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Light.woff2) format("woff2"),
+        url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Light.woff) format("woff");
+    font-weight:300;
+    font-style:normal;
+    font-display:swap
+}
+@font-face{
+    font-family:"FontJapanese";
+    src:url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Thin.woff2) format("woff2"),
+    url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Thin.woff) format("woff");
+    font-weight:100;
+    font-style:normal;
+    font-display:swap
+}
+$font-family-header: 'BodyFont', sans-serif;
+$color-header-background:black;
+$color-header-font:#fafafa;
+
+$color-body-background:#f9f9f9;

@@ -1,0 +1,17 @@
+{% load static %}
+{% load sass_tags %}
+{% load tagsBasics %}
+
+
+<div class="swiper-slide card">
+     <a href="">
+          <span class="bestseller">Bestseller</span>
+          <div class="flex row align-center justify-center">
+               <img src="{{product.img.url}}" alt="">
+          </div>
+          <h2 class="name">{{product.name}}</h2>
+          <h3 class="detail">64 GB - Black - Unlocked</h3>
+          <span class="starting">Starting from</span>
+          <span class="price">{{ product.price|price }}</span>
+     </a>
+</div>

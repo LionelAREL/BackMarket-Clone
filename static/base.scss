@@ -7,11 +7,7 @@
   text-decoration: none;
   box-sizing: border-box;
 
-  --font-family-header: 'Nunito Sans';
-  --color-header:white;
-  --color-font-header:black;
 }
-
 
 body{
   box-sizing: border-box;
@@ -23,4 +19,40 @@ body{
 
 section{
   min-height: 100vh ;
+}
+
+.flex{
+  display: flex;
+}
+
+.row{
+  flex-direction: row;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.space-around{
+  justify-content: space-around;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.base-line{
+  align-items: baseline;
+}
+
+.wrap{
+  flex-wrap: wrap;
 }

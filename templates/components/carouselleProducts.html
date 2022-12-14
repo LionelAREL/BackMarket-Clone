@@ -1,0 +1,25 @@
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'components/carouselleProducts.scss' %}" />
+     <link rel="stylesheet" href="{% sass_src 'components/cardProduct.scss' %}" />
+{% endblock %}
+
+<div class="flex row base-line text">
+    <h2 class="mainText">{{mainText}}</h2>
+    <span class="secondaryText">{{secondaryText}}</span>
+</div>
+<div class="carouselle carouselle-{{carouselleId}}">
+    <div class='flex full swiper-wrapper'>
+        {% for product in products %}
+            {% include 'components/cardProduct.html' with product=product %}
+        {% endfor %}
+    </div>
+    <div class="navigation next">
+        <img src="{% static 'assets/next.svg' %}" alt="">
+    </div>
+    <div class="navigation previous">
+        <img src="{% static 'assets/previous.svg' %}" alt="">
+    </div>
+</div>

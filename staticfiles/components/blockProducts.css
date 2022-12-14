@@ -1,0 +1,40 @@
+.containerBlock .top {
+  margin-bottom: 20px; }
+  .containerBlock .top .bigBlock:first-of-type {
+    margin-right: 5%; }
+  .containerBlock .top .bigBlock {
+    width: 47.5%; }
+
+.containerBlock .littleBlock {
+  height: 320px;
+  width: 30%;
+  margin-right: 5%; }
+
+.containerBlock .littleBlock:last-of-type {
+  margin-right: 0; }
+
+.containerBlock a {
+  height: inherit;
+  width: fit-content; }
+
+.containerBlock .block {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  height: 320px;
+  background-color: white;
+  font-family: 'BodyFont', sans-serif; }
+  .containerBlock .block img {
+    width: 45%;
+    margin: 0 auto; }
+  .containerBlock .block h2 {
+    font-weight: 300;
+    color: #121212;
+    margin: 0;
+    margin-bottom: 8px; }
+  .containerBlock .block span {
+    font-weight: 300;
+    color: #545454; }
+  .containerBlock .block:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 20px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; }
+
+/*# sourceMappingURL=blockProducts.css.map */

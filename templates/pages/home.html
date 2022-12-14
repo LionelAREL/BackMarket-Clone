@@ -4,36 +4,83 @@
 
 {% block stylsheet %}
      <link rel="stylesheet" href="{% sass_src 'pages/home.scss' %}" />
+     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+     <script src="{% static 'js/home.js' %}" defer></script>
 {% endblock %}
 
 
 {% block content %}
-    <img class="background" src="{% static 'assets/banner.jpg' %}" alt="">
-    <div class="info">
-        <div class="element">
-            <img class="icon" id="icon1" src="{% static 'assets/shipping.webp' %}" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae harum similique illo illum explicabo sunt rem placeat sed earum unde!</p>
+    <div class="home-container">
+        <div class="carouselle-1">
+            <div class="flex swiper-wrapper">
+                {% for carouselle in carouselle1 %}
+                    <div class="swiper-slide">
+                        <img decoding="async" src="{% static 'carouselle-1/'|add:carouselle %}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="next navigation">
+                <img src="{% static 'assets/next.svg' %}" alt="">
+            </div>
+            <div class="previous navigation">
+                <img src="{% static 'assets/previous.svg' %}" alt="">
+            </div>
         </div>
-        <div class="element">
-            <img class="icon" id="icon2" src="{% static 'assets/online.webp' %}" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae harum similique illo illum explicabo sunt rem placeat sed earum unde!</p>
-        </div>
-        <div class="element">
-            <img class="icon" id="icon3" src="{% static 'assets/money.webp' %}" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae harum similique illo illum explicabo sunt rem placeat sed earum unde!</p>
-        </div>
-    </div>
-    <div class="latest">
-        Latest Products
-    </div>
-    <div class="products">
-        {% for product in latest %}
-            {% include 'catalogue/product.html' with product=product %}
-            {% if request.get_full_path == '/shop/' %}
-                <a href = "{% url 'catalogue:productDetail' pk=product.id  %}">view product</a>
-                <a href="{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:shop' %}"> add to cart </a>
-            {% endif %}
-        {% endfor %}
+        <div class="container">
+            {% include 'components/carouselleProducts.html' with products=latest carouselleId="2" mainText="Hotter than the hottest potato" secondaryText="Or “potatoe”" %}
+            <br>
+            {% include 'components/blockProducts.html' with products=latest mainText="Most wanted" secondaryText="The tech in everyone’s search bar" %}
+            <br>
+            {% include 'components/carouselleProducts.html' with products=latest carouselleId="2" mainText="Hotter than the hottest potato" secondaryText="Or “potatoe”" %}
+            <br>
+            {% include 'components/blockProducts.html' with products=latest mainText="Most wanted" secondaryText="The tech in everyone’s search bar" %}
+            <br>
+
+            <div class="learn-more flex row">
+                <div class="left flex column">
+                    <h1>Welcome to Back Market, the last big thing in tech. </h1>
+                    <button>See why</button>
+                </div>
+                <div class="right flex row wrap">
+                    <div class="element flex column justify-center align-center margin">
+                        <img src="{% static 'assets/element-1.svg' %}" alt="">
+                        <div class="flex column align-center">
+                            <h2>Safety net</h2>
+                            <span>30 days to change your mind and a 1-year warranty.</span>
+                        </div>
+                    </div>
+                    <div class="element flex column justify-center align-center">
+                        <img src="{% static 'assets/element-2.svg' %}" alt="">
+                        <div class="flex column align-center">
+                            <h2>Safety net</h2>
+                            <span>30 days to change your mind and a 1-year warranty.</span>
+                        </div>
+                    </div>
+                    <div class="element flex column justify-center align-center margin">
+                        <img src="{% static 'assets/element-3.svg' %}" alt="">
+                        <div class="flex column align-center">
+                            <h2>Safety net</h2>
+                            <span>30 days to change your mind and a 1-year warranty.</span>
+                        </div>
+                    </div>
+                    <div class="element flex column justify-center align-center">
+                        <img src="{% static 'assets/element-4.svg' %}" alt="">
+                        <div class="flex column align-center">
+                            <h2>Safety net</h2>
+                            <span>30 days to change your mind and a 1-year warranty.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="junk">
+                <img src="{% static 'assets/junk.svg' %}" alt="">
+                <button>I've got junk</button>
+            </div>
+
+        </div>  
     </div>
 
 {% endblock %}

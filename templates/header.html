@@ -1,25 +1,43 @@
 {% block header %}
 {% load static %}
 {% load active_link_tags %}
-
-<nav>
-    <ul>
-        <li><a class="hover-underline-animation {% active_link 'home' %}" href="{% url 'home' %}">Home</a></li>
-        <li><a class="hover-underline-animation {% active_link 'catalogue:shop' %}" href="{% url 'catalogue:shop' %}">Shop</a></li>
-        <li><a class="hover-underline-animation {% active_link 'catalogue:about' %}" href="{% url 'catalogue:shop' %}">About</a></li>
-    </ul>
+<nav class="flex row space-between align-center">
+    <div class="first flex row align-center">
+        <a href="{% url 'home' %}"><img class="logo" src="{% static 'assets/logo-bm.gif' %}"></a>
+        <ul class="flex row space-around">
+            <li><a href="{% url 'home' %}">About us</a></li>
+            <li><a href="{% url 'catalogue:shop' %}">Trade-in</a></li>
+            <li><a href="{% url 'catalogue:shop' %}">Help</a></li>
+        </ul>
+    </div>
+    <div class="input">
+        <input type="text" name="" id="input-header" placeholder="Are you looking for an iPhone 11, MacBook, Samsung, ...">
+        <img class="search" src="{% static 'assets/search.svg' %}" alt="">
+    </div>
+    <div class="second flex row align-center">
+        <ul class="flex row align-center">
+            <li>
+                <a class="hover-underline-animation {% active_link 'account:account' %}" href="{% url 'account:account' %}"> 
+                    <img class="person" src="{% static 'assets/person.svg' %}" alt="">
+                </a>
+            </li>
+            <li>
+                <a class="hover-underline-animation {% active_link 'cart:cart' %}" href="{% url 'cart:cart' %}"> 
+                    <img class="cart" src="{% static 'assets/cart.svg' %}" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
-<div class="logo">
-    <a href="{% url 'home' %}"><img src="{% static 'assets/logo.png' %}"></a>
+<div class="categories flex row align-center">
+    <a href="" class="first flex row align-center">
+        <img class="all" src="{% static 'assets/all.svg' %}" alt="">
+        <div>All</div>
+    </a>
+    {% for categorie in categories %}
+        <a href="" class="categorie">
+            {{categorie.name}}
+        </a>
+    {% endfor %}
 </div>
-<nav>
-    <ul>
-        <li>
-            <a class="hover-underline-animation {% active_link 'account:account' %}" href="{% url 'account:account' %}">account</a>
-        </li>
-        <li>
-            <a class="hover-underline-animation {% active_link 'cart:cart' %}" href="{% url 'cart:cart' %}">cart({{ cart }})</a>
-        </li>
-    </ul>
-</nav>
 {% endblock %}

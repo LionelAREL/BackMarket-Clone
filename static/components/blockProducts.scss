@@ -1,0 +1,50 @@
+.containerBlock{
+    .top{
+        margin-bottom: 20px;
+        .bigBlock:first-of-type{
+            margin-right: 5%;
+        }
+        .bigBlock{
+            width: 47.5%;
+        }
+    }
+    .littleBlock{
+        height: 320px;
+        width: 30%;
+        margin-right: 5%;
+    }
+    .littleBlock:last-of-type{
+        margin-right: 0;
+    }
+    
+    a{
+        height:inherit;
+        width:fit-content;
+    }
+    
+    .block{
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        height: 320px;
+        background-color: white;
+        font-family: 'BodyFont', sans-serif;
+        img{
+            width: 45%;
+            margin: 0 auto;
+        }
+        h2{
+            font-weight: 300;
+            color: #121212;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+        span{
+            font-weight: 300;
+            color: #545454;
+        }
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 20px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        }
+    }
+    
+}

@@ -1,0 +1,32 @@
+.full {
+  width: max-content;
+  padding: 30px 0; }
+
+.carouselle {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent); }
+  .carouselle .navigation {
+    filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%);
+    position: absolute;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px; }
+    .carouselle .navigation img {
+      width: inherit;
+      height: inherit; }
+    .carouselle .navigation:hover {
+      cursor: pointer; }
+  .carouselle .next {
+    top: 50%;
+    transform: translate(0, -100%);
+    right: 50px; }
+  .carouselle .previous {
+    top: 50%;
+    transform: translate(0, -100%);
+    left: 0px; }
+
+/*# sourceMappingURL=carouselleProducts.css.map */
