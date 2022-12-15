@@ -21,3 +21,15 @@ var swiper2 = new Swiper(".carouselle-2", {
       prevEl: ".previous",
     },
   });
+
+var swiper3 = new Swiper(".carouselle-3", {
+    slidesPerView:'auto',
+    spaceBetween: 20,
+    slidesPerGroup: 4,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: ".next",
+      prevEl: ".previous",
+    },
+  });
