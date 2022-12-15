@@ -1,58 +1,168 @@
+@font-face {
+  font-family: "BodyFont";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.eot#iefix) format("embedded-opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFont";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.eot#iefix) format("embedded-opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFont";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.eot#iefix) format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "TitleFontLatin";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.eot#iefix) format("embedded-opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "TitleFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.eot#iefix) format("embedded-opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Black.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Black.woff.woff) format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Bold.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Medium.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Regular.woff2) format("woff2"), 4 url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Light.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Thin.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Thin.woff) format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap; }
+
+a {
+  color: #fafafa;
+  text-decoration: none;
+  font-family: "BodyFont", sans-serif;
+  font-weight: 500;
+  font-size: 14px; }
+
 header {
-  background-color: var(--color-header);
-  position: sticky;
-  top: 0;
-  z-index: 500;
-  display: flex;
-  flex-direction: row;
-  margin-left: 0;
-  justify-content: space-between; }
+  background-color: black; }
   header nav {
-    margin: auto 0; }
-    header nav ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding-inline-start: 0;
-      margin-block: 0; }
-      header nav ul li {
-        margin: 0 20px;
-        list-style: none; }
-        header nav ul li a {
-          color: var(--color-font-header);
-          text-decoration: none;
-          font-family: var(--font-family-header), sans-serif;
-          font-size: 12px;
-          font-weight: 400;
-          font-style: normal;
-          text-transform: uppercase;
-          white-space: nowrap;
-          line-height: 1.5; }
-  header .logo {
-    margin: 10px 0; }
-    header .logo img {
-      height: 50px; }
-  header .hover-underline-animation {
-    display: inline-block;
-    position: relative;
-    color: var(--color-font-header); }
-  header .hover-underline-animation:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--color-font-header);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out; }
-  header .hover-underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left; }
-  header .active {
-    color: var(--color-font-header);
-    text-decoration: underline;
-    text-underline-offset: 3px; }
+    padding: 10px 30px 0;
+    height: 58px; }
+    header nav .first .logo {
+      width: 180px; }
+    header nav .first ul li {
+      list-style: none;
+      margin: 0 15px; }
+      header nav .first ul li:hover {
+        opacity: 0.5; }
+    header nav .input {
+      margin-left: 15px;
+      position: relative; }
+      header nav .input #search_text {
+        position: relative;
+        background-color: white;
+        border: none;
+        width: calc(92vw - 600px);
+        height: 34px;
+        border-radius: 5px;
+        text-indent: 20px;
+        min-width: 450px; }
+        header nav .input #search_text:focus {
+          outline: none; }
+      header nav .input .search {
+        position: absolute;
+        right: 5px;
+        top: 4px;
+        width: 30px; }
+    header nav .second ul li {
+      list-style: none;
+      width: 50px; }
+      header nav .second ul li a img {
+        filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%); }
+      header nav .second ul li a .person {
+        width: 35px;
+        margin-right: 5px; }
+      header nav .second ul li a .cart-logo {
+        width: 28px; }
+  header .categories {
+    background-color: black;
+    height: 34px;
+    padding: 0 30px;
+    color: #fafafa;
+    font-family: "BodyFont", sans-serif; }
+    header .categories .first {
+      margin-right: 25px; }
+      header .categories .first:hover {
+        opacity: 0.5; }
+      header .categories .first .all {
+        filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%);
+        width: 25px;
+        margin-right: 10px; }
+    header .categories .categorie {
+      margin-left: 30px;
+      font-size: 17px;
+      font-weight: 300; }
+      header .categories .categorie:hover {
+        opacity: 0.5; }
 
 /*# sourceMappingURL=header.css.map */

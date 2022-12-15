@@ -1,39 +1,21 @@
-form{
-    text-align: center;
-    margin-top: 40px;
-    font-family: var(--font-family-header);
-    text-transform: lowercase;
-    font-weight: 400;
-    font-size: 20px;
-    select{
-        font-size: 20px;
-        height: 40px;
+@import "./../variables.scss";
+
+section{
+    background-color: $color-body-background;
+}
+.shop {
+    width: 1120px;
+    margin: 0 auto;
+    padding: 30px 0;
+    .products{
+        
     }
-    label{
-        top: 0;
+    h1{
+        font-family: 'TitleFontLatin', sans-serif;
     }
-    #id_search_text{
-        border-radius: -50px;
-        height: 40px;
-        border-width: 1px;
-        width: 600px;
-        font-size: 38px;
-    }
-    input[type="submit"]{
-        margin-left: 30px;
-        cursor:pointer;
-        background-color: transparent;
-        border-radius: -50px;
-        font-size: 30px;
-        border-width: 1px;
-        ;
+    .card{
+        margin-bottom: 20px;
     }
 }
 
-.products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 60px auto;
-    width: 80%;
-}
+

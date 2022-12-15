@@ -9,14 +9,29 @@
 
 
 {% block content %}
-<div class="signup">
-    <form action="{% url 'account:login' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit">
-    </form>
+
+<div class="formContainer flex column align-center justify-center">
+    <div class="flex column">
+        <h1>Initiating retina scan. JK, who’s there? </h1>
+        <h2>Open sesame. I’m signing up. </h2>
+    </div>  
+    <div class="form flex column">
+        <form class="flex column" action="{% url 'account:login' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field }}
+                    {% if field.help_text and field.errors %}
+                        <div class="help">{{ field.help_text|safe }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <input class="button" type="submit" value="Create an account">
+            <a href="{% url 'account:login' %}">Already register ?</a>
+        </form>
+    </div>
 </div>
-<p>deja inscrit ? <a href="{% url 'account:login' %}">log in</a></p>
 
 {% endblock %}
 

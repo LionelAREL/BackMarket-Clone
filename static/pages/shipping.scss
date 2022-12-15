@@ -1,21 +1,29 @@
+@import "./form.scss";
+
+
 .shipping{
-    font-family: var(--font-family-header);
-    a{
-        color: var(--color-font-header);
+    h2{
+        margin-top: 120px;
     }
-    input[type="submit"]{
-        margin-left: 30px;
-        cursor:pointer;
-        background-color: transparent;
-        border-radius: -50px;
+
+    .selected{
+        font-weight: 500;
+        font-family: 'BodyFont', sans-serif;
         font-size: 20px;
-        border-width: 1px;
-        
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
-    #checkout-button{
-        cursor:pointer;
-        font-size: 20px;
-        background-color: transparent;
-        font-family: var(--font-family-header);
+    
+    .adresses{
+        .adresse{
+            font-weight: 300;
+            font-family: 'BodyFont', sans-serif;
+            font-size: 17px;
+            margin-bottom: 6px;
+            a{
+                margin: 0;
+                margin-left: 8px;
+            }
+        }
     }
 }

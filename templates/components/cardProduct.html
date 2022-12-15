@@ -2,9 +2,12 @@
 {% load sass_tags %}
 {% load tagsBasics %}
 
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'components/cardProduct.scss' %}" />
+{% endblock %}
 
 <div class="swiper-slide card">
-     <a href="">
+     <a href="{% url 'catalogue:productDetail' pk=product.id  %}">
           <span class="bestseller">Bestseller</span>
           <div class="flex row align-center justify-center">
                <img src="{{product.img.url}}" alt="">

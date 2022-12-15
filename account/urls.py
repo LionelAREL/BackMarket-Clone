@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as authViews
 from django.urls import reverse_lazy
+from .forms import PasswordFormUpdate
 
 app_name = 'account'
 
@@ -28,7 +29,7 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path(
-        "password_change/", authViews.PasswordChangeView.as_view(template_name="pages/passwordChange.html",success_url = reverse_lazy("account:password_change_done")), name="password_change"
+        "password_change/", authViews.PasswordChangeView.as_view(template_name="pages/passwordChange.html",form_class=PasswordFormUpdate,success_url = reverse_lazy("account:password_change_done")), name="password_change"
     ),
     path(
         "password_change/done/",

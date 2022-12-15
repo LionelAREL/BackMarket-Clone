@@ -3,17 +3,31 @@
 {% load sass_tags %}
 
 {% block stylsheet %}
-     <link rel="stylesheet" href="{% sass_src 'pages/login.scss' %}" />
+     <link rel="stylesheet" href="{% sass_src 'pages/updateUser.scss' %}" />
 {% endblock %}
 
 {% block content %}
-<p>update profil</p>
-<div>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
+<div class="formContainer flex column align-center justify-center">
+    <div class="flex column">
+        <h1>Initiating brain scan. JK, what to modify? </h1>
+        <h2>Update your profile .</h2>
+    </div>
+    <div class="form flex column">
+        <form class="flex column" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field }}
+                    {{ field.errors }}
+                    {% if field.help_text %}
+                    <div class="help">{{ field.help_text|safe }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <input class="button" type="submit" value="Update your profile">
+        </form>
+        <a href="{% url 'account:account' %}">Go back to your profile</a>
+    </div>
 </div>
 {% endblock %}
 

@@ -1,0 +1,71 @@
+@import "./../variables.scss";
+
+section{
+    background-color: $color-body-background;
+}
+
+
+.formContainer{
+    margin: 0 auto;
+    width: 1120px;
+    padding: 100px 0 15px;
+    h1{
+        font-family: 'TitleFontLatin', sans-serif;
+        font-size: 30px;
+    }
+    h2{
+        margin: 0 0 30px;
+        font-weight: 500;
+        font-family: 'BodyFont', sans-serif;
+    }
+    
+    form{
+        width: fit-content;
+    }
+    input{
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        border: solid 1px hsla(0,0%,7%,0.72);
+        height: 50px;
+        width: 500px;
+        font-weight: 300;
+        font-family: 'BodyFont', sans-serif;
+        font-size: 20px;
+        text-indent: 20px;
+        background-color: #ffffff;
+        &:focus{
+            border: none;
+            background-color: #ffffff;
+        }
+    }
+
+    .button{
+        cursor: pointer;
+        border:none;
+        background-color: black;
+        color: white;
+        padding: 0 50px;
+        text-indent: 0;
+        align-self: flex-end;
+        width: max-content;
+        border-radius: 8px;
+        &:focus{
+            background-color: black;
+        }
+    }
+
+    a{
+        align-self: flex-start;
+        font-weight: 500;
+        font-family: 'BodyFont', sans-serif;
+        color: black;
+        text-decoration: underline;
+        font-size: 16px;
+        opacity: 0.8;
+        margin: 20px 0 0;
+    }
+
+
+
+}

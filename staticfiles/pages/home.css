@@ -1,47 +1,198 @@
-.background {
-  background-size: cover;
-  width: 100%;
-  background-position: center center;
-  background-size: cover;
-  height: 100%; }
+@font-face {
+  font-family: "BodyFont";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Light.eot#iefix) format("embedded-opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
 
-.info {
-  margin: 60px auto;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-content: center; }
-  .info .element {
-    margin: auto 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column; }
-    .info .element img {
-      margin: 0 auto;
-      border-style: none;
-      vertical-align: middle;
-      margin-bottom: 20px; }
-  .info #icon1 {
-    margin-top: 25px;
-    width: 130px; }
+@font-face {
+  font-family: "BodyFont";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Regular.eot#iefix) format("embedded-opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
 
-.latest {
-  width: 80%;
-  margin: 60px auto;
-  text-align: center;
-  font-size: 60px;
-  font-family: var(--font-family-header);
+@font-face {
+  font-family: "BodyFont";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/SctoGroteskA-Medium.eot#iefix) format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "BodyFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSans-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "TitleFontLatin";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/GT-Super-Display-Super.eot#iefix) format("embedded-opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "TitleFontGreek";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.woff) format("woff"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.ttf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.otf) format("truetype"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/Blacker-Pro-Display-Condensed-Heavy.eot#iefix) format("embedded-opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Black.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Black.woff.woff) format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Bold.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Bold.woff) format("woff");
   font-weight: 700;
-  color: #1e1e1e; }
+  font-style: normal;
+  font-display: swap; }
 
-.products {
-  width: 80%;
-  margin: 60px auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Medium.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Regular.woff2) format("woff2"), 4 url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Light.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "FontJapanese";
+  src: url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Thin.woff2) format("woff2"), url(https://d1eh9yux7w8iql.cloudfront.net/fonts/NotoSansJP-Thin.woff) format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap; }
+
+section {
+  background-color: #f9f9f9; }
+
+.home-container {
+  margin: 0 auto;
+  max-width: 1700px; }
+  .home-container .carouselle-1 {
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+    height: 100%; }
+    .home-container .carouselle-1 .swiper-slide img {
+      width: inherit; }
+    .home-container .carouselle-1 .navigation {
+      filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%);
+      position: absolute;
+      width: 48;
+      height: 48; }
+      .home-container .carouselle-1 .navigation img {
+        width: inherit;
+        height: inherit; }
+      .home-container .carouselle-1 .navigation:hover {
+        cursor: pointer;
+        border-radius: 25px;
+        background: rgba(211, 211, 211, 0.3); }
+    .home-container .carouselle-1 .next {
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 50px; }
+    .home-container .carouselle-1 .previous {
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 50px; }
+  .home-container .container {
+    margin: 0 auto;
+    width: 1120px; }
+  .home-container .text .mainText {
+    margin-right: 14px; }
+  .home-container .learn-more {
+    background-color: white;
+    height: 410px;
+    padding: 56px;
+    margin: 25px 0; }
+    .home-container .learn-more .left {
+      width: 40%; }
+      .home-container .learn-more .left button {
+        width: fit-content; }
+      .home-container .learn-more .left h1 {
+        font-family: 'TitleFontLatin', sans-serif;
+        font-weight: 900;
+        color: #333333;
+        font-size: 35px; }
+      .home-container .learn-more .left button {
+        background-color: black;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        padding: 15px 30px; }
+        .home-container .learn-more .left button:hover {
+          opacity: 0.5;
+          cursor: pointer; }
+    .home-container .learn-more .right {
+      width: 60%; }
+      .home-container .learn-more .right .element {
+        width: 48%;
+        height: 48%; }
+        .home-container .learn-more .right .element img {
+          width: 60px;
+          height: 60px; }
+        .home-container .learn-more .right .element h2 {
+          margin: 0;
+          margin-bottom: 4px;
+          margin-top: 10px;
+          font-family: 'BodyFont', sans-serif;
+          font-weight: 400;
+          font-size: 20px; }
+        .home-container .learn-more .right .element span {
+          font-family: 'BodyFont', sans-serif;
+          font-weight: 300; }
+    .home-container .learn-more .margin {
+      margin-right: 4%; }
+  .home-container .junk {
+    margin: 25px 0;
+    position: relative; }
+    .home-container .junk button {
+      position: absolute;
+      top: 60%;
+      left: 30px;
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      color: black;
+      font-size: 20px;
+      padding: 15px 30px; }
+      .home-container .junk button:hover {
+        opacity: 0.5;
+        cursor: pointer; }
 
 /*# sourceMappingURL=home.css.map */

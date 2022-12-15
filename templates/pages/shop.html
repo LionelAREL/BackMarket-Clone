@@ -8,17 +8,16 @@
 
 
 {% block content %}
-    {% for message in messages %}
-        {{message}}
-    {% endfor %}
-        <form method="get">
-            {{ form }}
-            <input type="submit" value="search">
-        </form>
-    <div class="products">
+
+<div class="shop">
+    <h1>Your search:</h1>
+    <div class="products flex row wrap space-between">
         {% for product in products %}
-            {% include 'catalogue/product.html'%}
+            {% include 'components/cardProduct.html' with product=product %}
         {% endfor %}
     </div>
+
+</div>
+
 {% endblock %}
 

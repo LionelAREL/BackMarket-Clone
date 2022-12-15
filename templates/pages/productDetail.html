@@ -1,20 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load sass_tags %}
+{% load tagsBasics %}
 
 {% block stylsheet %}
      <link rel="stylesheet" href="{% sass_src 'pages/productDetail.scss' %}" />
 {% endblock %}
 
 {% block content %}
-    <div class="detail">
-        <img src="{{product.img.url}}" alt="">
-        <div class="info">
+    <div class="paths flex row align-center">
+        <a href="{% url 'home' %}" class="path flex row align-center">
+            <span>Home</span>
+            <img src="{% static 'assets/next.svg' %}" alt="">
+        </a>
+        <a href="{% url 'home' %}" class="path flex row align-center">
+            <span>Path to</span>
+            <img src="{% static 'assets/next.svg' %}" alt="">
+        </a>
+        <a href="{% url 'home' %}" class="path flex row align-center">
+            <span>Edit</span>
+            <img src="{% static 'assets/next.svg' %}" alt="">
+        </a>
+        <span>
+            {{product.name}}
+        </span>
+    </div>
+    <div class="product-detail flex row">
+        <img class="poster" src="{{product.img.url}}" alt="">
+        <div class="info flex column">
             <h1>{{product.name}}</h1>
-            <p>{{product.price_float}}€</p>
-            <p>Article restant : {{product.stock}}</p>
-            <p>description : {{product.description}}</p>
-            <a style="cursor:pointer;" onclick="fetchUpdateCart(`{% url 'catalogue:addToCart' productId=product.id %}`)">add a article</a>
+            <div class="first flex row space-between align-center">
+                <span>product.detail details</span>
+                <h2>{{product.price|price}}</h2>
+            </div>
+            <div class="second flex row space-between">
+                <img src="{% static 'assets/comment.svg' %}" alt="">
+                <button onclick="location.href=`{% url 'catalogue:addToCart' productId=product.id %}?next={% url 'catalogue:productDetail' pk=product.id %}`;">Buy</button>
+            </div>
+            <div class="transition"></div>
+            <div class="carriers flex row align-center">
+                <img src="{% static 'assets/lock.svg' %}" alt="">
+                <span>Works with <a href="">all carriers</a> </span>
+            </div>
+            <div class="transition"></div>
+            <div class="image-block">
+                <img src="{% static 'assets/shipping.svg' %}" alt="">
+            </div>
+            <div class="image-block">
+                <img src="{% static 'assets/even-less.svg' %}" alt="">
+            </div>
+            <div class="image-block">
+                <img src="{% static 'assets/payment.svg' %}" alt="">
+            </div>
         </div>
     </div>
 {% endblock %}

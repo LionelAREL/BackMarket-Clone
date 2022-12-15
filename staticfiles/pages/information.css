@@ -99,107 +99,25 @@
 section {
   background-color: #f9f9f9; }
 
-.cart {
-  padding: 20px 40px; }
-  .cart .left {
-    width: 65%; }
-    .cart .left h1 {
-      font-weight: 500;
-      font-family: 'BodyFont', sans-serif; }
-    .cart .left .orders .bigCard {
-      margin: 20px 0;
-      border-radius: 15px;
-      width: 80%;
-      padding: 32px;
-      background-color: white;
-      box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05); }
-      .cart .left .orders .bigCard img {
-        width: 110px;
-        height: 110px;
-        margin-right: 30px; }
-      .cart .left .orders .bigCard .text {
-        width: 100%; }
-        .cart .left .orders .bigCard .text h2 {
-          margin: 20px 0 10px;
-          font-weight: 400;
-          font-family: 'BodyFont', sans-serif;
-          font-size: 20px; }
-        .cart .left .orders .bigCard .text span {
-          font-weight: 300;
-          font-family: 'BodyFont', sans-serif;
-          font-size: 15px; }
-        .cart .left .orders .bigCard .text .price {
-          font-family: BodyFont,sans-serif;
-          font-weight: 500;
-          font-size: 20px; }
-      .cart .left .orders .bigCard .button {
-        padding: 14px 18px;
-        height: fit-content;
-        align-self: center;
-        margin: 0 10px;
-        border: none;
-        border-radius: 8px;
-        font-size: 15px;
-        font-weight: 500;
-        font-family: 'BodyFont', sans-serif;
-        background-color: transparent; }
-      .cart .left .orders .bigCard .add {
-        border: solid 1px green;
-        color: green; }
-        .cart .left .orders .bigCard .add:hover {
-          background-color: #18b820;
-          cursor: pointer;
-          color: white; }
-      .cart .left .orders .bigCard .remove {
-        border: solid 1px red;
-        color: red; }
-        .cart .left .orders .bigCard .remove:hover {
-          background-color: #ed5118;
-          cursor: pointer;
-          color: white; }
-      .cart .left .orders .bigCard .text-1 {
-        font-weight: 300;
-        font-family: 'BodyFont', sans-serif;
-        font-size: 15px; }
-      .cart .left .orders .bigCard .text-margin-1 {
-        margin-top: 40px; }
-  .cart .right h1 {
-    font-weight: 500;
-    font-family: 'BodyFont', sans-serif; }
-  .cart .right .cardCheckout {
-    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+.informationContainer {
+  margin: 0 auto;
+  width: 1120px;
+  padding: 100px 0 15px; }
+  .informationContainer .container {
     background-color: white;
-    width: 330px;
-    height: 280px;
-    padding: 24px;
-    border-radius: 15px; }
-    .cart .right .cardCheckout .line {
-      font-weight: 300;
+    border-radius: 10px;
+    padding: 25px 35px 40px; }
+    .informationContainer .container h1 {
+      font-family: 'TitleFontLatin', sans-serif;
+      font-size: 40px; }
+    .informationContainer .container h2 {
+      margin: 0 0 30px;
+      font-weight: 500;
       font-family: 'BodyFont', sans-serif;
-      font-size: 15px;
-      margin-bottom: 20px; }
-    .cart .right .cardCheckout a {
+      font-size: 20px; }
+    .informationContainer .container a {
       color: black;
       text-decoration: underline;
-      cursor: pointer; }
-    .cart .right .cardCheckout .transition {
-      border-top: solid rgba(18, 18, 18, 0.12) 1px;
-      margin-top: 40px; }
-    .cart .right .cardCheckout button {
-      align-self: center;
-      width: 100%;
-      height: 60px;
-      background-color: black;
-      border: none;
-      border-radius: 15px;
-      color: white;
-      font-weight: 500;
-      font-family: BodyFont,sans-serif;
-      font-size: 20px;
-      cursor: pointer; }
-    .cart .right .cardCheckout .total {
-      font-weight: 500;
-      font-family: BodyFont,sans-serif;
-      font-size: 15px; }
+      font-size: 18px; }
 
-/*# sourceMappingURL=cart.css.map */
+/*# sourceMappingURL=information.css.map */

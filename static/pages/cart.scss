@@ -1,6 +1,144 @@
+@import "./../variables.scss";
+
+section{
+    background-color: $color-body-background;
+}
+
 .cart{
-    #commander{
-        color: var(--color-font-header);
-        font-size: 20px;
+    padding: 20px 40px;
+    .left{
+        width: 65%;
+        h1{
+            font-weight: 500;
+            font-family: 'BodyFont', sans-serif;
+        }
+        .orders{
+            .bigCard{
+                margin: 20px 0;
+                border-radius: 15px;
+                width: 80%;
+                padding: 32px;
+                background-color: white;
+                box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+                img{
+                    width: 110px;
+                    height: 110px;
+                    margin-right: 30px;
+                }
+                .text{
+                    width: 100%;
+                    h2{
+                        margin: 20px 0 10px;
+                        font-weight: 400;
+                        font-family: 'BodyFont', sans-serif;
+                        font-size: 20px;
+                    }
+                    span{
+                        font-weight: 300;
+                        font-family: 'BodyFont', sans-serif;
+                        font-size: 15px;
+                    }
+                    .price{
+                        font-family: BodyFont,sans-serif;
+                        font-weight: 500;
+                        font-size: 20px;
+                    }
+                }
+                .button{
+                    padding: 14px 18px;
+                    height: fit-content;
+                    align-self: center;
+                    margin: 0 10px;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    font-family: 'BodyFont', sans-serif;
+                    background-color: transparent;
+                }
+                .add{
+                    border: solid 1px green;
+                    color: green;
+                    &:hover{
+                        background-color: #18b820;
+                        cursor: pointer;
+                        color: white;
+                    }
+                }
+                .remove{
+                    border: solid 1px red;
+                    color: red;
+                    &:hover{
+                        background-color: #ed5118;
+                        cursor: pointer;
+                        color: white;
+                    }
+                }
+
+                .text-1{
+                    font-weight: 300;
+                    font-family: 'BodyFont', sans-serif;
+                    font-size: 15px;
+                }
+                .text-margin-1{
+                    margin-top: 40px;
+                }
+            }
+        }
+
+    }
+    .right{
+        h1{
+            font-weight: 500;
+            font-family: 'BodyFont', sans-serif;
+        }
+
+        .cardCheckout{
+            box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+            background-color: white;
+            width: 330px;
+            height: 280px;
+            padding: 24px;
+            border-radius: 15px;
+
+
+            .line{
+                font-weight: 300;
+                font-family: 'BodyFont', sans-serif;
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+            a{
+                color: black;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .transition{
+                border-top: solid hsla(0,0%,7%,0.12) 1px;
+                margin-top: 40px;
+            }
+
+            button{
+                align-self:center;
+                width: 100%;
+                height: 60px;
+                background-color: black;
+                border: none;
+                border-radius: 15px;
+                color: white;
+                font-weight: 500;
+                font-family: BodyFont,sans-serif;
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .total{
+                font-weight: 500;
+                font-family: BodyFont,sans-serif;
+                font-size: 15px;
+            }
+        }
+
     }
 }

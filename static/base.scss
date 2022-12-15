@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import "./variables.scss";
 
 :root{
   margin: 0;
@@ -15,6 +15,7 @@ body{
   padding: 0;
   list-style: none;
   text-decoration: none;
+  min-width: 1140px;
 }
 
 section{

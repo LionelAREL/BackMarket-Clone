@@ -1,17 +1,75 @@
-.detail {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  font-family: var(--font-family-header); }
-  .detail img {
-    width: 800px;
-    height: 800px; }
-  .detail .info {
-    display: inline-block; }
-    .detail .info a {
+.paths {
+  margin: 30px auto 30px;
+  width: 1120px; }
+  .paths .path span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+    color: #121212;
+    opacity: 0.7; }
+  .paths .path img {
+    width: 24px;
+    margin-top: 2px;
+    margin: 0 40px 0 20px; }
+  .paths span {
+    font-weight: 500;
+    font-family: 'BodyFont', sans-serif; }
+
+.product-detail {
+  margin: 40px auto 30px;
+  width: 1120px; }
+  .product-detail .poster {
+    width: 466px;
+    height: 466px; }
+  .product-detail .info {
+    width: 100%; }
+    .product-detail .info h1 {
+      font-family: 'TitleFontLatin', sans-serif;
+      font-size: 35px;
+      margin: 0 0 10px; }
+    .product-detail .info .first span {
       font-size: 20px;
-      color: var(--color-font-header); }
+      font-weight: 300;
+      font-family: 'BodyFont', sans-serif; }
+    .product-detail .info .first h2 {
+      margin: 0;
+      font-weight: 500;
+      font-family: 'BodyFont', sans-serif;
+      font-size: 25px;
+      color: black; }
+    .product-detail .info .second {
+      margin: 30px 0 60px; }
+      .product-detail .info .second button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 18px 120px;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        font-family: BodyFont,sans-serif; }
+        .product-detail .info .second button:hover {
+          cursor: pointer; }
+    .product-detail .info .transition {
+      margin: 20px 0;
+      border-top: solid rgba(18, 18, 18, 0.12) 1px; }
+    .product-detail .info .carriers img {
+      width: 35px; }
+    .product-detail .info .carriers span {
+      margin-top: 4px;
+      margin-left: 10px;
+      font-weight: 300;
+      font-family: 'BodyFont', sans-serif;
+      font-size: 16px; }
+      .product-detail .info .carriers span a {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'BodyFont', sans-serif;
+        text-decoration: underline;
+        color: black; }
+        .product-detail .info .carriers span a:hover {
+          opacity: 0.5; }
+    .product-detail .info .image-block {
+      margin: 20px 0; }
 
 /*# sourceMappingURL=productDetail.css.map */

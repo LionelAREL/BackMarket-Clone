@@ -1,7 +1,47 @@
+@import "./../variables.scss";
+
+section{
+    background-color: $color-body-background;
+}
+
 .account{
-    margin: 60px 30px;
-    font-family: var(--font-family-header);
-    a{
-        color: var(--color-front-header);
+    margin: 0 auto;
+    width: 1120px;
+    h1{
+        font-family: 'TitleFontLatin', sans-serif;
+        font-size: 40px;
+    }
+    h2{
+        margin: 0 0 30px;
+        font-weight: 300;
+        font-size: 20px;
+        font-family: 'BodyFont', sans-serif;
+    }
+
+    .accountContainer{
+        width: 600px;
+        background-color: white;
+        padding:20px 25px;
+        border-radius: 10px;
+        h2{
+            font-weight: 500;
+            font-family: 'BodyFont', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        div{
+            font-weight: 300;
+            font-family: 'BodyFont', sans-serif;
+        }
+        a{
+            color: black;
+            text-decoration: underline;
+        }
+        .logout{
+            font-weight: 400;
+            align-self:flex-end;
+            font-size: 20px;
+            text-decoration: none;
+        }
     }
 }

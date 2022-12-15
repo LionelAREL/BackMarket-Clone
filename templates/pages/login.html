@@ -7,17 +7,28 @@
 {% endblock %}
 
 {% block content %}
-<div class="login">
-    <form action="{% url 'account:login' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit">
-    </form>
+<div class="formContainer flex column align-center justify-center">
+    <div class="flex column">
+        <h1>Initiating retina scan. JK, who’s there? </h1>
+        <h2>It’s me. I’m logging in. </h2>
+    </div>
+    <div class="form flex column">
+        <form class="flex column" action="{% url 'account:login' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field }}
+                    {% if field.help_text %}
+                    <div class="help">{{ field.help_text|safe }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <input class="button" type="submit" value="Beam me up">
+            <a href="{% url 'account:signUp' %}">Sign up here ! </a>
+            <a href="{% url 'account:password_reset' %}">Forget password ?</a>
+        </form>
+    </div>
 </div>
-<p>sign up here ! <a href="{% url 'account:signUp' %}">click here</a></p>
-<p>forgot password ? <a href="{% url 'account:password_reset' %}">click here</a></p>
-{% for message in messages %}
-    {{message}}
-{% endfor %}
 {% endblock %}
 

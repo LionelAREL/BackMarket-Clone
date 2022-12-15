@@ -1,20 +1,104 @@
-.detail{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    font-family: var(--font-family-header);
-    img{
-        width: 800px;
-        height: 800px;
+.paths{
+    margin:30px auto 30px;
+    width: 1120px;
+    .path{
+        span{
+            font-family: 'Inter';
+            font-style: normal;
+            font-size: 15px;
+            color: #121212;
+            opacity: 0.7;
+        }
+        img{
+            width: 24px;
+            margin-top: 2px;
+            margin: 0 40px 0 20px    ;
+        }
+    }
+    span{
+        font-weight: 500;
+        font-family: 'BodyFont', sans-serif;
+    }
+}
+
+.product-detail{
+    margin:40px auto 30px;
+    width: 1120px;
+    .poster{
+        width: 466px;
+        height: 466px;
     }
     .info{
-        display: inline-block;
-        a{
-            font-size: 20px;
-            color: var(--color-font-header);
+        width: 100%;
+        h1{
+            font-family: 'TitleFontLatin', sans-serif;
+            font-size: 35px;
+            margin: 0 0 10px;
+        }
+        .first{
+            span{
+                font-size: 20px;
+                font-weight: 300;
+                font-family: 'BodyFont', sans-serif;
+            }
+            h2{
+                margin: 0;
+                font-weight: 500;
+                font-family: 'BodyFont', sans-serif;
+                font-size: 25px;
+                color: black;
+            }
+        }
+        .second{
+            margin: 30px 0 60px;
+            img{
+
+            }
+            button{
+                border: none;
+                background-color: black;
+                color: white;
+                padding: 18px 120px;
+                border-radius: 10px;
+                font-weight: 500;
+                font-size: 20px;
+                font-family: BodyFont,sans-serif;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
 
+        .transition{
+            margin: 20px 0;
+            border-top: solid hsla(0,0%,7%,0.12) 1px;
+        }
+
+        .carriers{
+            img{
+                width: 35px;
+            }
+            span{
+                margin-top: 4px;
+                margin-left: 10px;
+                font-weight: 300;
+                font-family: 'BodyFont', sans-serif;
+                font-size: 16px;
+                a{
+                    font-size: 16px;
+                    font-weight: 500;
+                    font-family: 'BodyFont', sans-serif;
+                    text-decoration: underline;
+                    color: black;
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        .image-block{
+            margin: 20px 0;
+        }
     }
 }

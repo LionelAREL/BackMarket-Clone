@@ -1,0 +1,32 @@
+@import "./../variables.scss";
+
+section{
+    background-color: $color-body-background;
+}
+
+.informationContainer{
+        margin: 0 auto;
+        width: 1120px;
+        padding: 100px 0 15px;
+
+        .container{
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px 35px 40px;
+            h1{
+                font-family: 'TitleFontLatin', sans-serif;
+                font-size: 40px;
+            }
+            h2{
+                margin: 0 0 30px;
+                font-weight: 500;
+                font-family: 'BodyFont', sans-serif;
+                font-size: 20px;
+            }
+            a{
+                color: black;
+                text-decoration: underline;
+                font-size: 18px;
+            }
+        }
+}

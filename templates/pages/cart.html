@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load sass_tags %}
+{% load tagsBasics %}
 
 {% block stylsheet %}
      <link rel="stylesheet" href="{% sass_src 'pages/cart.scss' %}" />
@@ -8,12 +9,58 @@
 
 
 {% block content %}
-    <div class="cart">
-        {% include 'cart/order.html' %}
-        <a id="commander" href = "{% url 'cart:shipping'  %}">buy</a>
-        {% for message in messages %}
-            {{message}}
-        {% endfor %}
+<div class="cart">
+    <div class="flex row">
+        <div class="left">
+            <h1>Your cart</h1>
+            <div class="orders">
+                {% for orderItem in order.orderItems.all %}
+
+                    <div class="bigCard">
+                        <div class="flex row ">
+                            <img src="{{orderItem.product.img.url}}" alt="">
+                            <div class="text flex column">
+                                <h2>{{orderItem.product.name}}</h2>
+                                <span>Quantity: {{orderItem.quantity}} </span>
+                                <span>Comes with: Charging cable</span>
+                                <div class="price">{{orderItem.product.price|price}}</div>
+                            </div>
+                            <button class="add button" onclick="location.href=`{% url 'catalogue:addToCart' productId=orderItem.product.id %}?next={% url 'cart:cart' %}`;">Add</button>
+                            <button class="remove button" onclick="location.href=`{% url 'catalogue:remove' orderItemId=orderItem.id %}?next={% url 'cart:cart' %}`">Remove</button>
+                        </div>
+                        <div class="text-1 text-margin-1">Get protection</div>
+                        <div class="text-1">Let's face it, choosing a protection plan usually sucks. That's why we're keeping it simple. </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+        <div class="right">
+            <h1>Summary</h1>
+            <div class="first">
+                <div class="cardCheckout">
+                    <div class="line flex row space-between">
+                        <span>items</span>
+                        <span>{{order.total_order_float}}€</span>
+                    </div>
+                    <div class="line flex row space-between">
+                        <span>Total shipping</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="line flex row space-between">
+                        <a>Quality Assurance Fee</a>
+                        <span>0.00€</span>
+                    </div>
+                    <div class="transition"></div>
+                    <div class="line total flex row space-between">
+                        <h2>Cart total</h2>
+                        <h2>{{order.total_order_float}}€</h2>
+                    </div>
+                    <button onclick="location.href=`{% url 'cart:shipping'  %}`;">Checkout</button>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}
 

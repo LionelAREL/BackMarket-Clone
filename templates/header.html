@@ -10,32 +10,37 @@
             <li><a href="{% url 'catalogue:shop' %}">Help</a></li>
         </ul>
     </div>
-    <div class="input">
-        <input type="text" name="" id="input-header" placeholder="Are you looking for an iPhone 11, MacBook, Samsung, ...">
-        <img class="search" src="{% static 'assets/search.svg' %}" alt="">
-    </div>
+    <form class="input" method="GET" action="{% url 'catalogue:shop' %}">
+        <label for="search_text">
+        </label>
+            <input name="search_text" type="text" id="search_text" placeholder="Are you looking for an iPhone 11, MacBook, Samsung, ...">
+        <label for="submit">
+            <img class="search" src="{% static 'assets/search.svg' %}" alt="">
+        </label>
+        <input id="submit" type="submit" style="display:none">
+    </form>
     <div class="second flex row align-center">
         <ul class="flex row align-center">
             <li>
-                <a class="hover-underline-animation {% active_link 'account:account' %}" href="{% url 'account:account' %}"> 
+                <a class="{% active_link 'account:account' %}" href="{% url 'account:account' %}"> 
                     <img class="person" src="{% static 'assets/person.svg' %}" alt="">
                 </a>
             </li>
             <li>
-                <a class="hover-underline-animation {% active_link 'cart:cart' %}" href="{% url 'cart:cart' %}"> 
-                    <img class="cart" src="{% static 'assets/cart.svg' %}" alt="">
+                <a class="{% active_link 'cart:cart' %}" href="{% url 'cart:cart' %}"> 
+                    <img class="cart-logo" src="{% static 'assets/cart.svg' %}" alt="">
                 </a>
             </li>
         </ul>
     </div>
 </nav>
 <div class="categories flex row align-center">
-    <a href="" class="first flex row align-center">
+    <a href="{% url 'catalogue:shop' %}" class="first flex row align-center">
         <img class="all" src="{% static 'assets/all.svg' %}" alt="">
         <div>All</div>
     </a>
     {% for categorie in categories %}
-        <a href="" class="categorie">
+        <a href="{% url 'catalogue:shop' %}?categorie={{categorie.name}}" class="categorie">
             {{categorie.name}}
         </a>
     {% endfor %}

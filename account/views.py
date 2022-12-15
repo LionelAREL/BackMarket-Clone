@@ -45,10 +45,16 @@ class LoginView(FormView):
     form_class = UserFormLogin
     template_name = 'pages/login.html'
     success_url = "/"
-
-    def  form_valid(self, form):
+    def form_valid(self, form):
         login(request=self.request,user=form.user_cache)
         return super().form_valid(form)
+    # def post(self,request,*args,**kwargs):
+    #     form = self.get_form()
+    #     form['username'].widget = forms.TextInput(attrs={'placeholder': 'Username'})
+    #     form['username'].label = False
+    #     form['password'].widget = forms.PasswordInput(attrs={'placeholder':'Password'}) 
+    #     form['password'].label = False
+    #     return super().post(self,request,*args,**kwargs)
 
 
 @method_decorator(login_required, name='dispatch')

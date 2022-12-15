@@ -20,13 +20,16 @@ header{
         li{
           list-style: none;
           margin: 0 15px;
+          &:hover{
+            opacity: 0.5;
+          }
         }
       }
     }
     .input{
       margin-left: 15px;
       position:relative;
-      #input-header{
+      #search_text{
         position: relative;
         background-color: white;
         border:none;
@@ -34,6 +37,7 @@ header{
         height: 34px;
         border-radius: 5px;
         text-indent: 20px;
+        min-width: 450px;
         &:focus{
           outline: none;
         }
@@ -58,7 +62,7 @@ header{
               width: 35px;
               margin-right: 5px;
             }
-            .cart{
+            .cart-logo{
               width: 28px;
             }
           }
@@ -74,6 +78,9 @@ header{
     color:$color-header-font;
     font-family: $font-family-header;
     .first{
+      &:hover{
+        opacity: 0.5;
+      }
       margin-right: 25px;
       .all{
         filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%);

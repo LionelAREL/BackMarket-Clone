@@ -7,22 +7,32 @@
 {% endblock %}
 
 {% block content %}
-<div class="account">
-        <p>{{user.username}}</p>
-        <p>{{user.email}}</p>
-        <p><a href="{% url 'account:updateUser' %}">change profil</a></p>
-        <p><a href="{% url 'account:password_change' %}">change password</a></p>
 
-        <p>previous order : </p>
-        {% for order in previousOrder %}
-            ---
-            {{order}}
-            {% for orderItem in order.orderItems.all %}
-                {{orderItem}}
-            {% endfor %}
-        {% endfor %}
-        {% if request.user.is_authenticated %}
-            <li><a href="{% url 'account:logOut' %}">Log out</a></li>
-        {% endif %}
+
+<div class="account flex column align-center">
+    <h1>My profile</h1>
+    <h2>Who am I? Where am I? Why am I? Look no further for the answers. </h2>
+    <div class="accountContainer flex column">
+        <h2>My info</h2>
+        <div>{{user.username}}</div>
+        <div>{{user.email}}</div>
+        <a style="margin-top:10px" href="{% url 'account:updateUser' %}">Change profil</a>
+        <div class="flex row space-between">
+            <a href="{% url 'account:password_change' %}">Change password</a>
+            <a class="logout" href="{% url 'account:logOut' %}">Logout</a>
+        </div>
+    </div>
 </div>
+
+
 {% endblock %}
+
+{% comment %} {% for order in previousOrder %}
+        {{order}}
+        {% for orderItem in order.orderItems.all %}
+            {{orderItem}}
+        {% endfor %}
+{% endfor %}
+    {% if request.user.is_authenticated %}
+        <li><a href="{% url 'account:logOut' %}">Log out</a></li>
+    {% endif %} {% endcomment %}

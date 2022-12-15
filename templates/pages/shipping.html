@@ -10,26 +10,45 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
 <script src="https://js.stripe.com/v3/"></script>
 
-<div class="shipping">
-        {% for adress in request.user.adresses.all %}
-        <p>
-            {{adress}}
-            <a href="{% url 'cart:selectAdress' adressId=adress.id %}">choose</a>
-        </p>
-    {% endfor %}
-<p>
-    adresse choisie : {{order.adress}}
-</p>
-<form action="{% url 'cart:shipping' %}" method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="ajouter une adresse">
-</form>
-<br>
-<form action="{% url 'cart:payment' %}" method="POST">
-    {% csrf_token %}
-  <button type="submit" id="checkout-button">bill and payment</button>
-</form>
+
+<div class="formContainer flex row">
+    <div class="flex column">
+        <h1>Initiating map scan. JK, where you want to be delivered? </h1>
+        <h2>Create your adresse. </h2>
+        <div class="form flex column">
+            <form class="flex column" action="{% url 'cart:shipping' %}" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.errors }}
+                    {{ field }}
+                    {% if field.help_text %}
+                    <div class="help">{{ field.help_text|safe }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <input class="button" type="submit" value="Create an adresses">
+            </form>
+        </div>
+    </div>
+    
+    <div class="shipping">
+        <h2>Select your adresse of delivery</h2>
+        <div class="adresses">
+            {% for adress in request.user.adresses.all %}
+                <div class="adresse flex row align-center">
+                    <span>{{adress}}</span>
+                    <a href="{% url 'cart:selectAdress' adressId=adress.id %}">select</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="selected">
+            adresse selected : {{order.adress}}
+        </div>
+        <form action="{% url 'cart:payment' %}" method="POST">
+            {% csrf_token %}
+            <input class="button" type="submit" value="Checkout">
+        </form>
 </div>
 
 {% endblock %}
