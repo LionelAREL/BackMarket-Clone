@@ -16,17 +16,9 @@
         <h2>Open sesame. I’m signing up. </h2>
     </div>  
     <div class="form flex column">
-        <form class="flex column" action="{% url 'account:login' %}" method="post">
+        <form class="flex column" method="post">
             {% csrf_token %}
-            {% for field in form %}
-                <div class="fieldWrapper">
-                    {{ field.errors }}
-                    {{ field }}
-                    {% if field.help_text and field.errors %}
-                        <div class="help">{{ field.help_text|safe }}</div>
-                    {% endif %}
-                </div>
-            {% endfor %}
+            {% include 'components/displayForm.html' with form=form %}
             <input class="button" type="submit" value="Create an account">
             <a href="{% url 'account:login' %}">Already register ?</a>
         </form>

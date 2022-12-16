@@ -26,6 +26,7 @@ class Shipping(FormView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.save(commit=True)
+        messages.success(self.request,"You had successfully create a new address")
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -116,4 +117,5 @@ class SelectAdress(RedirectView):
         order = get_or_set_order(self.request)
         order.adress = Adress.objects.get(id=kwargs['adressId'])
         order.save()
+        messages.success(self.request,"You choose a new address")
         return reverse('cart:shipping')

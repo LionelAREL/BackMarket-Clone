@@ -10,13 +10,15 @@ from .forms import *
 from django.contrib.auth.forms import PasswordChangeForm
 from account.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 
 @method_decorator(login_required, name='dispatch')
-class LogOut(RedirectView):
+class Logout(RedirectView):
     permanent = True
     pattern_name = 'home'
     def get_redirect_url(self, *args, **kwargs):
         logout(self.request)
+        messages.success(self.request,"You are now logout")
         return super().get_redirect_url(*args, **kwargs)
 
 class SignUpView(FormView):
@@ -25,7 +27,8 @@ class SignUpView(FormView):
     success_url = '/'
 
     def form_valid(self, form):
-        login(request=self.request, user=form.save(commit=True))
+        form = login(request=self.request, user=form.save(commit=True))
+        messages.success(self.request,"You're account was successfully created and you are login !!!")
         return super().form_valid(form)
 
 @login_required
@@ -34,6 +37,7 @@ def UpdateUserView(request):
         form = UserFormUpdate(request.POST, instance=request.user)
         if form.is_valid():
             user_form = form.save()
+            messages.success(self.request,"Your information has been updated")
             return redirect('account:account')
         else:
             return render(request, 'pages/updateUser.html',{'form':form})
@@ -41,21 +45,13 @@ def UpdateUserView(request):
         form = UserFormUpdate(instance=request.user)
         return render(request, 'pages/updateUser.html',{'form':form})
 
-class LoginView(FormView):
-    form_class = UserFormLogin
-    template_name = 'pages/login.html'
-    success_url = "/"
-    def form_valid(self, form):
-        login(request=self.request,user=form.user_cache)
-        return super().form_valid(form)
-    # def post(self,request,*args,**kwargs):
-    #     form = self.get_form()
-    #     form['username'].widget = forms.TextInput(attrs={'placeholder': 'Username'})
-    #     form['username'].label = False
-    #     form['password'].widget = forms.PasswordInput(attrs={'placeholder':'Password'}) 
-    #     form['password'].label = False
-    #     return super().post(self,request,*args,**kwargs)
-
+# class LoginView(FormView):
+#     template_name = 'pages/login.html'
+#     success_url = "/"
+#     def form_valid(self, form):
+#         login(request=self.request,user=form.user)
+#         messages.success(self.request,"Hello, you are now login, happy to see you !")
+#         return super().form_valid(form)
 
 @method_decorator(login_required, name='dispatch')
 class AccountView(TemplateView):

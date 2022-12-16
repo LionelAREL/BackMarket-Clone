@@ -4,23 +4,23 @@ from django import forms
 
 
 class UserFormLogin(AuthenticationForm):
-    fields = ['username','password']
+    fields = '__all__'
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget = forms.TextInput(attrs={'placeholder': 'Username'})
+        self.fields['username'].widget.attrs['placeholder']='Username'
         self.fields['username'].label = False
-        self.fields['password'].widget = forms.PasswordInput(attrs={'placeholder':'Password'}) 
+        self.fields['password'].widget.attrs['placeholder']='Password'
         self.fields['password'].label = False
 
 class PasswordFormUpdate(PasswordChangeForm):
     fields = "__all__"
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['old_password'].widget = forms.PasswordInput(attrs={'placeholder': 'Old password'})
+        self.fields['old_password'].widget.attrs['placeholder']='Old password'
         self.fields['old_password'].label = False
-        self.fields['new_password1'].widget = forms.PasswordInput(attrs={'placeholder':'New password'}) 
+        self.fields['new_password1'].widget.attrs['placeholder']='New password'
         self.fields['new_password1'].label = False
-        self.fields['new_password2'].widget = forms.PasswordInput(attrs={'placeholder':'New password again'}) 
+        self.fields['new_password2'].widget.attrs['placeholder']='New password again'
         self.fields['new_password2'].label = False
 
 class UserFormUpdate(forms.ModelForm):
@@ -38,9 +38,9 @@ class UserFormUpdate(forms.ModelForm):
         return email
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget = forms.TextInput(attrs={'placeholder': 'Username'})
+        self.fields['username'].widget.attrs['placeholder']='Username'
         self.fields['username'].label = False
-        self.fields['email'].widget = forms.TextInput(attrs={'placeholder':'Email'}) 
+        self.fields['email'].widget.attrs['placeholder']='Email'
         self.fields['email'].label = False
 
  
@@ -51,12 +51,13 @@ class UserFormSignUp(UserCreationForm):
         model = User
         fields = ['username','email','password1','password2']
     def __init__(self, *args, **kwargs):
-        super(UserCreationForm, self).__init__(*args, **kwargs)
-        self.fields['username'].widget = forms.TextInput(attrs={'placeholder': 'Username'})
+        print("################")
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['placeholder']='Username'
         self.fields['username'].label = False
-        self.fields['email'].widget = forms.TextInput(attrs={'placeholder': 'Email'})
+        self.fields['email'].widget.attrs['placeholder']='Email'
         self.fields['email'].label = False
-        self.fields['password1'].widget = forms.PasswordInput(attrs={'placeholder':'Password'}) 
+        self.fields['password1'].widget.attrs['placeholder']='Password'
         self.fields['password1'].label = False
-        self.fields['password2'].widget = forms.PasswordInput(attrs={'placeholder':'Password again'}) 
+        self.fields['password2'].widget.attrs['placeholder']='Password again'
         self.fields['password2'].label = False

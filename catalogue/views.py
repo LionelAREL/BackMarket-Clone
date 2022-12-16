@@ -83,15 +83,15 @@ class AddToCart(RedirectView):
         orderItem,orderedItem = OrderItem.objects.get_or_create(order=order,product=product)
         if not orderedItem:
             if orderItem.quantity > product.stock :
-                messages.error(self.request,"Vous essayez de commander plus que ce que l'on possède en stock")
+                messages.error(self.request,"You try to purchase more article than we have in stock")
                 orderItem.quantity=product.stock
             elif orderItem.quantity == product.stock :
-                messages.warning(self.request,'vous ne pouvez commander plus')
+                messages.error(self.request,'You can not purchase more')
             elif orderItem.quantity == 20:
-                messages.warning(self.request,'vous ne pouvez commander plus de 20 articles')
+                messages.error(self.request,'You can not purchase more than 20 articles')
             else:
                 orderItem.quantity +=1
-                messages.success(self.request,"vous avez ajouter un article au panier")
+                messages.success(self.request,f"Successfully add into your cart")
         orderItem.save()
         return self.request.GET.get('next')
 
@@ -99,18 +99,18 @@ class Remove(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         order = get_or_set_order(self.request)
         orderItem = OrderItem.objects.get(id=kwargs['orderItemId'])
-        if orderItem.quantity == 1:
-            messages.warning(self.request,"vous avez supprimer l'article du panier")
-        else :
-            messages.success(self.request,"vous avez supprimer avec succès l'article")
         orderItem.quantity-=1
         orderItem.save()
+        if orderItem.quantity == 0:
+            messages.success(self.request,"You have successfully delete this article of your cart")
+        else :
+            messages.success(self.request,f"1 item was remove, you have {orderItem.quantity} items of {orderItem.product.name} left in your cart")
         return self.request.GET.get('next')
 
 class DeleteToCart(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         get_object_or_404(OrderItem,id=kwargs['orderItemId']).delete()
-        messages.success(self.request,"article supprimer avec succès")
+        messages.success(self.request,"deleted of your cart")
         return self.request.GET.get('next')
 
 class BuyOrder(RedirectView):

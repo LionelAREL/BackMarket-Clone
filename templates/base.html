@@ -6,10 +6,12 @@
         <link rel="icon" href="../../static/assets/logo.png">
         <meta charset="utf-8" />
         <title>TataTitiToto.</title>
+        <link rel="stylesheet" href="{% sass_src 'variables.scss' %}" />
         <link rel="stylesheet" href="{% sass_src 'base.scss' %}" />
         <link rel="stylesheet" href="{% sass_src 'footer.scss' %}" />
         <link rel="stylesheet" href="{% sass_src 'header.scss' %}" />
         <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/messages.js' %}" defer></script>
     {% block stylsheet %}
     {% endblock %}
     
@@ -21,6 +23,22 @@
                 {% include 'header.html' %}
             {% endblock %}
         </header>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="message flex row justify-center {{ message.tags }}"{% endif %}> 
+                    <span>
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
+                        {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}Attention: {% endif %}
+                        {{ message }}
+                    </span>
+                    <div class="delete-message">
+                        <img src="{% static 'assets/close.svg' %}" alt="">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <section>
             {% block content %}
             {% endblock %}

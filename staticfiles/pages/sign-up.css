@@ -135,7 +135,10 @@ section {
     padding: 0 50px;
     text-indent: 0;
     align-self: flex-end;
-    width: max-content; }
+    width: max-content;
+    border-radius: 8px; }
+    .formContainer .button:focus {
+      background-color: black; }
   .formContainer a {
     align-self: flex-start;
     font-weight: 500;
@@ -145,5 +148,18 @@ section {
     font-size: 16px;
     opacity: 0.8;
     margin: 20px 0 0; }
+  .formContainer .errors {
+    gap: 8px; }
+  .formContainer .error {
+    gap: 8px;
+    padding: 0;
+    background-color: orange;
+    font-weight: 500;
+    font-family: 'BodyFont', sans-serif;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 6px; }
+  .formContainer .error.nonfield {
+    background-color: red; }
 
 /*# sourceMappingURL=sign-up.css.map */

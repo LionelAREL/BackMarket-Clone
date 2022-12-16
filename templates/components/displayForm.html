@@ -1,0 +1,28 @@
+{% load tagsBasics %}
+
+<div class="flex column errors">
+    {% for error in form.non_field_errors %}
+        <div class="error nonfield">
+            {{ error }}
+        </div>
+    {% endfor %}
+</div>
+{% for field in form %}
+    <div class="fieldWrapper">
+        {% if placeholder %}
+            {{ field|placeholder:placeholder }}
+        {% else %}
+            {{ field }}
+        {% endif %}
+        <div class="flex column errors">
+            {% for error in field.errors %}
+                <div class="error">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </div>
+        {% if field.help_text and False %}
+            <div class="help">{{ field.help_text|safe }}</div>
+        {% endif %}
+    </div>
+{% endfor %}

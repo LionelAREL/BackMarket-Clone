@@ -22,18 +22,40 @@
   border-radius: 10px;
   height: 320px;
   background-color: white;
-  font-family: 'BodyFont', sans-serif; }
+  font-family: 'BodyFont', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .containerBlock .block div {
+    width: 80%; }
+  .containerBlock .block a {
+    width: 100%; }
   .containerBlock .block img {
-    width: 45%;
+    width: 240px;
+    height: 240px;
     margin: 0 auto; }
   .containerBlock .block h2 {
     font-weight: 300;
     color: #121212;
     margin: 0;
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
   .containerBlock .block span {
     font-weight: 300;
-    color: #545454; }
+    color: #545454;
+    width: 100%; }
+    @supports (-webkit-line-clamp: 2) {
+      .containerBlock .block span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: initial;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical; } }
   .containerBlock .block:hover {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 20px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; }
 

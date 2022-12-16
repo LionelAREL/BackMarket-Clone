@@ -13,17 +13,9 @@
         <h2>It’s me. I’m logging in. </h2>
     </div>
     <div class="form flex column">
-        <form class="flex column" action="{% url 'account:login' %}" method="POST">
+        <form class="flex column" action="{% url 'account:login' %}" method="post">
             {% csrf_token %}
-            {% for field in form %}
-                <div class="fieldWrapper">
-                    {{ field.errors }}
-                    {{ field }}
-                    {% if field.help_text %}
-                    <div class="help">{{ field.help_text|safe }}</div>
-                    {% endif %}
-                </div>
-            {% endfor %}
+            {% include 'components/displayForm.html' with form=form %}
             <input class="button" type="submit" value="Beam me up">
             <a href="{% url 'account:signUp' %}">Sign up here ! </a>
             <a href="{% url 'account:password_reset' %}">Forget password ?</a>
