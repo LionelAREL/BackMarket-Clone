@@ -1,13 +1,41 @@
-<h1 align="center">Simple Ecommerce</h1>
-
-Simple Ecommerce website with all major features of normal Ecommerce ! 
+<h1 align="center">Black Market Clone</h1>
+<p align="center">
+  Be sure to ⭐ my repo so you can keep up to date on any daily progress ! ❤
+</p>
+<br>
+<p align="center">
+  <a href="https://ecommerce.lionel-arel.com" target="_blank">👋 demo here !</a>
+</p>
+<br>
+Clone of BlackMarket ecommerce website with all major features ! 🚀
 <br>
 Contains CRUD, advanced patterns and try to respect clean architecture. 📂
 <br>
+<br>
+<img width="800" src="https://github.com/LionelAREL/Whatsapp-Clone/blob/main/screenshot/screenshot-3.png" alt=""/>
+<img width="800" src="https://github.com/LionelAREL/Whatsapp-Clone/blob/main/screenshot/screenshot-1.png" alt=""/>
+<img width="800" src="https://github.com/LionelAREL/Whatsapp-Clone/blob/main/screenshot/screenshot-5.png" alt=""/>
 
-<p align="center">
-  <img width="800" src="" alt=""/>
-</p>
+## Stack
+- React <br>
+
+    > Redux
+   
+    > Mui
+    
+    > Styled-components
+    
+    >Typescript
+- Django <br>
+
+    > django Rest Framework
+
+    > corsheaders
+
+    > django_filters
+- Html/Css
+- Postgresql
+
 
 ## Features
 - [x] CRUD: create, update and remove articles, users, cart
@@ -23,8 +51,15 @@ Contains CRUD, advanced patterns and try to respect clean architecture. 📂
 - [x] Password forgot Page where users enter their address mail and will receive on their mailbox a link to reset their password
 
 ## Setup
+#### Frontend
+`npm install` install dependency  <br>
+
+`npm start` run locally the project <br>
+#### Backend
 `python3 manage.py makemigrations` launch migrations <br>
+
 `python3 manage.py migrate` apply migration on database <br>
+
 `python3 manage.py runserver` run server <br>
 
 ## Creator
@@ -32,4 +67,4 @@ Contains CRUD, advanced patterns and try to respect clean architecture. 📂
 - <https://github.com/lionelAREL>
 ## Copyright and license
 Code and documentation copyright 2021 the authors. Code released under the
-[MIT License].
+[MIT License](https://github.com/LionelAREL/BlackMarket-Clone/blob/main/LICENSE.md).
