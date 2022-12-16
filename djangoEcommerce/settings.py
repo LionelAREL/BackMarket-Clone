@@ -147,6 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'account.User'
 
 LOGIN_URL = '/account/login'
+LOGIN_REDIRECT_URL = '/account/account'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -184,3 +185,4 @@ AWS_S3_SIGNATURE_VERSION = config('AWS_S3_SIGNATURE_VERSION')
 AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME')
 AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN')
 AWS_LOCATION = config('AWS_LOCATION')
+
