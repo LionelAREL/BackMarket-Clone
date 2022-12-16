@@ -7,7 +7,7 @@ from .forms import PasswordFormUpdate, UserFormLogin
 app_name = 'account'
 
 urlpatterns = [
-    path('login/', authViews.LoginView.as_view(template_name="pages/login.html",form_class=UserFormLogin),name = 'login'),
+    path('login/', authViews.LoginView.as_view(template_name="pages/login.html",form_class=UserFormLogin,redirect_authenticated_user=True,success_url = reverse_lazy("account:account")),name = 'login'),
     path('sign-up/', views.SignUpView.as_view(),name = 'signUp'),
     path('logout/', views.Logout.as_view(),name = 'logout'),
     path('account/', views.AccountView.as_view(),name = 'account'),

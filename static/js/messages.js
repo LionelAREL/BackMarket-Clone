@@ -1,6 +1,6 @@
 console.log("messages moment")
 
-const TIME_LIVE_TOAST = 300000
+const TIME_LIVE_TOAST = 3000
 
 const deleteAllMessages = (messages) => {
     if(messages){
