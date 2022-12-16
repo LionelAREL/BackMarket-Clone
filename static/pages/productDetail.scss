@@ -24,6 +24,7 @@
 .product-detail{
     margin:40px auto 30px;
     width: 1120px;
+    column-gap: 20px;
     .poster{
         width: 466px;
         height: 466px;
@@ -34,6 +35,10 @@
             font-family: 'TitleFontLatin', sans-serif;
             font-size: 35px;
             margin: 0 0 10px;
+            overflow: hidden;
+            width: 650px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         .first{
             span{

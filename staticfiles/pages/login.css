@@ -148,5 +148,18 @@ section {
     font-size: 16px;
     opacity: 0.8;
     margin: 20px 0 0; }
+  .formContainer .errors {
+    gap: 8px; }
+  .formContainer .error {
+    gap: 8px;
+    padding: 0;
+    background-color: orange;
+    font-weight: 500;
+    font-family: 'BodyFont', sans-serif;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 6px; }
+  .formContainer .error.nonfield {
+    background-color: red; }
 
 /*# sourceMappingURL=login.css.map */

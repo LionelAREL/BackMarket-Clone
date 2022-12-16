@@ -141,4 +141,34 @@ section {
 .wrap {
   flex-wrap: wrap; }
 
+.messages {
+  text-align: center;
+  margin: 0; }
+  .messages .message {
+    position: relative;
+    padding: 10px 0; }
+  .messages .success {
+    background-color: green;
+    color: white;
+    font-family: "BodyFont", sans-serif;
+    font-weight: 400;
+    font-size: 16px; }
+  .messages .error {
+    background-color: red;
+    color: white; }
+  .messages .warning {
+    background-color: yellow;
+    color: white; }
+  .messages .delete-message {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 20px; }
+    .messages .delete-message img {
+      margin-top: 2px;
+      width: 70%;
+      filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%); }
+    .messages .delete-message:hover {
+      cursor: pointer; }
+
 /*# sourceMappingURL=base.css.map */

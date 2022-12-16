@@ -2,14 +2,14 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as authViews
 from django.urls import reverse_lazy
-from .forms import PasswordFormUpdate
+from .forms import PasswordFormUpdate, UserFormLogin
 
 app_name = 'account'
 
 urlpatterns = [
-    path('login/', views.LoginView.as_view(),name = 'login'),
+    path('login/', authViews.LoginView.as_view(template_name="pages/login.html",form_class=UserFormLogin),name = 'login'),
     path('sign-up/', views.SignUpView.as_view(),name = 'signUp'),
-    path('logOut/', views.LogOut.as_view(),name = 'logOut'),
+    path('logout/', views.Logout.as_view(),name = 'logout'),
     path('account/', views.AccountView.as_view(),name = 'account'),
     path('update-user/', views.UpdateUserView,name="updateUser"),
     path("password_reset/", authViews.PasswordResetView.as_view(template_name="pages/passwordReset.html",email_template_name="pages/emailSend.html", success_url = reverse_lazy("account:password_reset_done")), name="password_reset"),
