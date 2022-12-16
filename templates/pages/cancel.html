@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% load sass_tags %}
+
+{% block stylsheet %}
+     <link rel="stylesheet" href="{% sass_src 'pages/information.scss' %}" />
+{% endblock %}
+
 {% block content %}
-    cancel
+    <div class="informationContainer flex row align-center justify-center">
+        <div class="container">
+            <h1>What happend ? I don't understand !!</h1>
+            <h2>This order was sadly canceled !</h2>
+            <a href="{% url 'home' %}">Return to home with us !</a>
+        </div>
+    </div>
 {% endblock %}
 

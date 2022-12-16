@@ -11,8 +11,8 @@ from django.views.generic import TemplateView, FormView, RedirectView
 from cart.forms import AdressForm
 from cart.models import Order, Adress
 import stripe
-
-
+from django.contrib import messages
+from decouple import config
 
 class Cart(TemplateView):
     template_name = 'pages/cart.html'
@@ -38,8 +38,10 @@ class Payment(TemplateView):
     template_name = 'pages/payment.html'
     def post(self, request, *args, **kwargs):
         try :
-            stripe.api_key = 'sk_test_51KyVnpBtHPWEuLFwI33xUlMRcm2CY0WiFvtQt7D4tY8emMBAD0kK5s9aC0z1bN3c9bqAmBGVhPwWZN8KRbdeemRC00mxdVboJC'
-            YOUR_DOMAIN = 'http://localhost:8000'
+            stripe.api_key = config("STRIPE_KEY",default='sk_test_51KyVnpBtHPWEuLFwI33xUlMRcm2CY0WiFvtQt7D4tY8emMBAD0kK5s9aC0z1bN3c9bqAmBGVhPwWZN8KRbdeemRC00mxdVboJC',cast=str)
+            YOUR_DOMAIN = config("DOMAINS",default="http://localhost:8000",cast=str)
+            SUCCESS_URL_STRIPE = config("SUCCESS_URL_STRIPE",default="http://localhost:8000/cart/shipping/payment/success/",cast=str)
+            FAIL_URL_STRIPE = config("FAIL_URL_STRIPE",default="http://localhost:8000/cart/shipping/payment/cancel/",cast=str)
             order = get_or_set_order(request)
             items = [{
                         'price_data': {
@@ -59,8 +61,8 @@ class Payment(TemplateView):
                 payment_intent_data={
                     'capture_method': 'manual',
                 },
-                success_url=YOUR_DOMAIN + reverse('cart:success'),
-                cancel_url=YOUR_DOMAIN + reverse('cart:cancel'),
+                success_url=SUCCESS_URL_STRIPE,
+                cancel_url=FAIL_URL_STRIPE,
             )
             order.payment_id = checkout_session.stripe_id
             order.save()
