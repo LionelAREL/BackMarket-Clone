@@ -29,7 +29,7 @@
             <li>
                 <a class="{% active_link 'cart:cart' %}" href="{% url 'cart:cart' %}"> 
                     <img class="cart-logo" src="{% static 'assets/cart.svg' %}" alt="">
-                    {% if order.orderItems.count != 0 %}
+                    {% if order and order.orderItems.count != 0 %}
                         <div class="notification__cart"></div>
                     {% endif  %}
                 </a>
