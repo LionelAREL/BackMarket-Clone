@@ -161,5 +161,7 @@ section {
     border-radius: 6px; }
   .formContainer .error.nonfield {
     background-color: red; }
+  .formContainer .form {
+    width: 506px; }
 
 /*# sourceMappingURL=login.css.map */

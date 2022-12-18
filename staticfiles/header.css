@@ -137,13 +137,25 @@ header {
     header nav .second ul li {
       list-style: none;
       width: 50px; }
-      header nav .second ul li a img {
-        filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%); }
-      header nav .second ul li a .person {
-        width: 35px;
-        margin-right: 5px; }
-      header nav .second ul li a .cart-logo {
-        width: 28px; }
+      header nav .second ul li a {
+        position: relative;
+        display: block;
+        width: fit-content; }
+        header nav .second ul li a img {
+          filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%); }
+        header nav .second ul li a .person {
+          width: 35px;
+          margin-right: 5px; }
+        header nav .second ul li a .cart-logo {
+          width: 28px; }
+        header nav .second ul li a .notification__cart {
+          position: absolute;
+          top: 2px;
+          right: 2px;
+          width: 8px;
+          height: 8px;
+          background-color: #cab3fa;
+          border-radius: 50%; }
   header .categories {
     background-color: black;
     height: 34px;

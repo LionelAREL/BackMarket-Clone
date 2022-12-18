@@ -55,6 +55,9 @@ header{
           list-style: none;
           width: 50px;
           a{
+            position: relative;
+            display: block;
+            width: fit-content;
             img{
               filter: invert(93%) sepia(0%) saturate(7500%) hue-rotate(75deg) brightness(115%) contrast(106%);
             }
@@ -64,6 +67,15 @@ header{
             }
             .cart-logo{
               width: 28px;
+            }
+            .notification__cart{
+              position: absolute;
+              top: 2px;
+              right: 2px;
+              width: 8px;
+              height: 8px;
+              background-color: rgba(202, 179, 250, 1);;
+              border-radius: 50%;
             }
           }
         }
