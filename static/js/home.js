@@ -5,6 +5,9 @@ var swiper = new Swiper(".carouselle-1", {
       nextEl: ".next",
       prevEl: ".previous",
     },
+    autoplay: {
+      delay: 6000,
+    },
     loop:true,
     slidesPerView: 1,
     spaceBetween: 500,

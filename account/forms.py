@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm,PasswordChangeForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm,PasswordChangeForm, SetPasswordForm
 from account.models import User
 from django import forms
 
@@ -18,6 +18,15 @@ class PasswordFormUpdate(PasswordChangeForm):
         super().__init__(*args, **kwargs)
         self.fields['old_password'].widget.attrs['placeholder']='Old password'
         self.fields['old_password'].label = False
+        self.fields['new_password1'].widget.attrs['placeholder']='New password'
+        self.fields['new_password1'].label = False
+        self.fields['new_password2'].widget.attrs['placeholder']='New password again'
+        self.fields['new_password2'].label = False
+        
+class PasswordSetForm(SetPasswordForm):
+    fields = "__all__"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields['new_password1'].widget.attrs['placeholder']='New password'
         self.fields['new_password1'].label = False
         self.fields['new_password2'].widget.attrs['placeholder']='New password again'

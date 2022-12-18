@@ -79,7 +79,6 @@ class AddToCart(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         order= get_or_set_order(self.request)
         product = Product.objects.get(id=kwargs['productId'])
-        print(order)
         orderItem,orderedItem = OrderItem.objects.get_or_create(order=order,product=product)
         if not orderedItem:
             if orderItem.quantity > product.stock :
@@ -91,7 +90,9 @@ class AddToCart(RedirectView):
                 messages.error(self.request,'You can not purchase more than 20 articles')
             else:
                 orderItem.quantity +=1
-                messages.success(self.request,f"Successfully add into your cart")
+                messages.success(self.request,f"Successfully update, you have {orderItem.quantity} of {orderItem.product.name} in your cart")
+        else:
+            messages.success(self.request,f"Successfully add into your cart")
         orderItem.save()
         return self.request.GET.get('next')
 
