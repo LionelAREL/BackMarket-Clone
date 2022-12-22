@@ -12,9 +12,9 @@ Clone of BlackMarket ecommerce website with all major features ! 🚀
 Contains CRUD, advanced patterns and try to respect clean architecture. 📂
 <br>
 <br>
-<img width="800" src="https://github.com/LionelAREL/Whatsapp-Clone/blob/main/screenshot/screenshot-3.png" alt=""/>
-<img width="800" src="https://github.com/LionelAREL/Whatsapp-Clone/blob/main/screenshot/screenshot-1.png" alt=""/>
-<img width="800" src="https://github.com/LionelAREL/Whatsapp-Clone/blob/main/screenshot/screenshot-5.png" alt=""/>
+<img width="800" src="https://github.com/LionelAREL/BlackMarket-Clone/blob/main/screenshots/screenshot-3.png" alt=""/>
+<img width="800" src="https://github.com/LionelAREL/BlackMarket-Clone/blob/main/screenshots/screenshot-1.png" alt=""/>
+<img width="800" src="https://github.com/LionelAREL/BlackMarket-Clone/blob/main/screenshots/screenshot-5.png" alt=""/>
 
 ## Stack
 - React <br>
