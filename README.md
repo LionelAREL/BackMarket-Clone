@@ -1,4 +1,4 @@
-<h1 align="center">Black Market Clone</h1>
+<h1 align="center">Back Market Clone</h1>
 <p align="center">
   Be sure to ⭐ my repo so you can keep up to date on any daily progress ! ❤
 </p>
